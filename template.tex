@@ -373,6 +373,52 @@ The discussed papers provided an interesting look at the current state-of-the-ar
 
 The visualization of neural networks is important and will become more relevant in the future, as machines and networks advance over time. There is still a lot of work to be done but there are already promising approaches and there is quite a lot of research in the field. Significant global companies like Google or Facebook are also interested in pushing this aspect of neural networks. Further, we want to highlight, that a lot of the projects regarding visualization in this field are open source and easily accessible for anybody interested in getting started with deep learning. 
 
+\newpage
+
+\section{New Papers - Overview}
+\subsection{Towards Better Analysis of Deep Convolutional Neural Networks}
+In their paper, Liu et al. introduce a  visualization approach for visualizing deep convolutional neural networks (CNNs). CNNs present a major challenge for scientists and experts working with them for a number of reasons as detailed in their work. First, neural networks can consist of hunderds of individual layers that themselves are made up of thousands of neurons. This inherent problem makes analysis on a neuron-level difficult. Secondly, training a CNN is a time-intensive task, where training can last for hours, days, or even weeks. Therefore, the correct identification of potential problems is key to saving time and resources.\\
+
+\begin{figure}
+  \centering
+  \includegraphics[width=3in]{cnnvis}
+  \caption{Sample image of CNNVis. \protect\cite{}}
+  \label{fig:cnnvis}
+\end{figure}
+
+With their approach, CNNVis (\ref{fig:cnnvis}), Liu et al. try to tackle those challenges in order to give experts a tool for an easy visual analysis of their networks. Their text describes how CNNVis works and evaluates it in three user-studies where they measure performance improvements across multiple neural networks.\\
+
+\subsubsection{Approach}
+CNNVis uses a number of different steps to achieve a comprehensible CNN visualization. Those include the following.
+
+\begin{itemize}
+  \item The network is converted into a directed acyclic graph (DAG)
+  \item Layers are clustered
+  \item Representative layers are chosen
+  \item Neurons of those layers are clustered
+  \item Representative neurons are chosen
+  \item A hierarchical rectangle packing algorithm is applied
+  \item A matrix reordering algorithm helps with visualizing activations
+  \item A biclustering-based edge bundling method is applied
+\end{itemize}
+
+Since we don't want to focus on every detail of how their process works, we'll outlay some of the steps listed above.\\
+
+\begin{figure}
+  \centering
+  \includegraphics[width=3in]{cnnvis_detail}
+  \caption{Sample image of CNNVis. \protect\cite{}}
+  \label{fig:cnnvis_detail}
+\end{figure}
+
+In figure \ref{fig:cnnvis_detail} we can see a detailed look at the visual output their program produces. As the input data is passed through the network, more and more features are being learned in axccordance with their previous layers. Left of Fig. \ref{fig:cnnvis_detail}C we can see a representative network layer with some representative neurons. The neurons are chosen by sorting for maximum activation. A pool of five neurons-clusters is picked which can be switched by the user. When clicking on a individual neuron-cluster (Fig. \ref{fig:cnnvis_detail}A), the user can see how certain input images (which themselves are user-swappable) effect the activation of a single cluster (Fig. \ref{fig:cnnvis_detail}B1 and B2). Through that, the features a network has learned can be understood and decisions for retraining can be made. Finally, the biclustering-based edge bundling algorithm allows for decluttering the vast number of inter-neuron connections.\\
+
+To summarize, Liu et al.'s application is a good way to visualize deep neural networks. Their clustering techniques allow for a stripped-down exploration of a network, where only necessary components can be viewed. User interaction allows for a flexible alteration to specific user needs. To demonstrate that their approach improves many aspects of CNN trainging, they conducted multiple user studies. Those studies were generally favorable of CNNVis and found it to be helpful for detailed network analysis.
+
+\subsection{Towards Better Analysis of Deep Convolutional Neural Networks}
+
+
+
 \bibliographystyle{acmsiggraph}
 \nocite{*}
 \bibliography{template}
