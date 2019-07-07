@@ -4,7 +4,7 @@ In their paper, Mengchen et al developed the tool DGMTracker, which allows exper
 DGMTracker offers the following three modules. Snapshot-, layer- and neuron-level analysis.
 To achieve this, DGMTracker is divided into two modules. Data flow visualization and Training dynamics analysis.
 Data flow visualization focuses on the general flow of input data towards the output layer. Experts can analyze hotspots and bottlenecks using this flow data. DGMTracker offers snapshot- and neuron-level analysis of data flow data.
-Training dynamics are a collection of multiple parameters of intereset to the expert. These include loss and average weight per layer. Those data are visualized in the Training dynamics analysis module of DGMTracker.
+Training dynamics are a collection of multiple parameters of interest to the expert. These include loss and average weight per layer. Those data are visualized in the Training dynamics analysis module of DGMTracker.
 Using these modules the expert can then perform analysis on different levels of detail in different modalities.
 An overview if DGMTracker's architecture can be seen in Figure.
 
@@ -20,13 +20,13 @@ FIGURE_HERE
 These data cumulatively represent the overall training dynamics of a network.
 
 Neuron-level analysis
-On this level the expert can see how each neuron of one layer contributes to the input of the following layer. Contribution is assessed by using a credit assignment formula which maps each node's influence to a scale of minus one to one (where negative values mean backward contribution and positive ones denote forward contribution).
-These values are mapped to visual representations of the nodes through a color map. Connections between nodes follow the same scheme. Their thickness additionally shows the magnitude of contribution on individual connections. Since there are usually too many nodes in each layer to visualize them all separately, Mengchen et al have used K-Means clustering to reduce visual clutter. Neurons are then placed on a feature map to further reduce complexity (see Figure).
+On this level, the expert can see how each neuron of one layer contributes to the input of the following layer. The contribution is assessed by using a credit assignment formula which maps each node's influence to a scale of minus one to one (where negative values mean backward contribution and positive ones denote forward contribution).
+These values are mapped to visual representations of the nodes through a color map. Connections between nodes follow the same scheme. Their thickness additionally shows the magnitude of contribution to individual connections. Since there are usually too many nodes in each layer to visualize them all separately, Mengchen et al have used K-Means clustering to reduce visual clutter. Neurons are then placed on a feature map to further reduce complexity (see Figure).
 
 FIGURE_HERE
 
 Training dynamics visualization
 This second module of DGMTracker was designed to enable experts to analyze training processes on a temporal level.
-Snapshot data is visualized using different line charts showing metrics such as loss and layer activation over time. Again, visualizing all the data directly will usally lead to visual clutter. In this case Mengchen et al propose blue-noise sampling to extract a representative overview of the raw data (see Figure). The advantage of blue-noise sampling over conventional random sampling of snapshot data is that the former preserves outliers. This is especially important if the expert is to find layers and neurons that may cause training failure.
+Snapshot data is visualized using different line charts showing metrics such as loss and layer activation over time. Again, visualizing all the data directly will usually lead to visual clutter. In this case, Mengchen et al propose blue-noise sampling to extract a representative overview of the raw data (see Figure). The advantage of blue-noise sampling over the conventional random sampling of snapshot data is that the former preserves outliers. This is especially important if the expert is to find layers and neurons that may cause training failure.
 
 FIGURE_HERE
