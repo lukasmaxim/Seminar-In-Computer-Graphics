@@ -1,0 +1,55 @@
+\begin{thebibliography}{\protect\citename{Wongsuphasawat et~al\mbox{.} }2018}
+
+\bibitem[\protect\citename{He et~al\mbox{.} }2015]{He2015}
+{\sc He, K., Zhang, X., Ren, S., and Sun, J.}
+\newblock 2015.
+\newblock Deep residual learning for image recognition.
+\newblock {\em CoRR abs/1512.03385\/}.
+
+\bibitem[\protect\citename{Li et~al\mbox{.} }2017]{Li2017}
+{\sc Li, H., Xu, Z., Taylor, G., and Goldstein, T.}
+\newblock 2017.
+\newblock Visualizing the loss landscape of neural nets.
+\newblock {\em CoRR abs/1712.09913\/}.
+
+\bibitem[\protect\citename{Nguyen et~al\mbox{.} }2016]{Nguyen2016}
+{\sc Nguyen, A., Yosinski, J., and Clune, J.}
+\newblock 2016.
+\newblock {Multifaceted Feature Visualization: Uncovering the Different Types
+  of Features Learned By Each Neuron in Deep Neural Networks}.
+
+\bibitem[\protect\citename{Samek et~al\mbox{.} }2017]{Samek2017}
+{\sc Samek, W., Binder, A., Montavon, G., Lapuschkin, S., and Muller, K.-R.}
+\newblock 2017.
+\newblock {Evaluating the Visualization of What a Deep Neural Network Has
+  Learned}.
+\newblock vol.~28. nov, 2660--2673.
+
+\bibitem[\protect\citename{Smilkov et~al\mbox{.} }2017]{Smilkov2017}
+{\sc Smilkov, D., Carter, S., Sculley, D., Vi{\'{e}}gas, F.~B., and Wattenberg,
+  M.}
+\newblock 2017.
+\newblock {Direct-Manipulation Visualization of Deep Networks}.
+\newblock aug.
+
+\bibitem[\protect\citename{Sugiyama et~al\mbox{.} }1981]{Sugiyama1981}
+{\sc Sugiyama, K., Tagawa, S., and Toda, M.}
+\newblock 1981.
+\newblock {Methods for Visual Understanding of Hierarchical System Structures}.
+\newblock vol.~11. 109--125.
+
+\bibitem[\protect\citename{Wongsuphasawat et~al\mbox{.}
+  }2018]{Wongsuphasawat2018}
+{\sc Wongsuphasawat, K., Smilkov, D., Wexler, J., Wilson, J., Mane, D., Fritz,
+  D., Krishnan, D., Viegas, F.~B., and Wattenberg, M.}
+\newblock 2018.
+\newblock {Visualizing Dataflow Graphs of Deep Learning Models in TensorFlow}.
+\newblock vol.~24. jan, 1--12.
+
+\bibitem[\protect\citename{Yosinski et~al\mbox{.} }2015]{Yosinski2015}
+{\sc Yosinski, J., Clune, J., Nguyen, A., Fuchs, T., and Lipson, H.}
+\newblock 2015.
+\newblock {Understanding Neural Networks Through Deep Visualization}.
+\newblock jun.
+
+\end{thebibliography}

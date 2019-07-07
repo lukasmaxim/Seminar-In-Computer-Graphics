@@ -1,0 +1,644 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2019.1.18)  26 APR 2019 18:17
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**"/Users/lukasmasopust/Documents/Informatik/Master/2. Semester/Seminar in Computer Graphics/report/template.tex"
+(/Users/lukasmasopust/Documents/Informatik/Master/2. Semester/Seminar in Computer Graphics/report/template.tex
+LaTeX2e <2018-04-01> patch level 2
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+(/Users/lukasmasopust/Documents/Informatik/Master/2. Semester/Seminar in Computer Graphics/report/acmsiggraph.cls
+Document Class: acmsiggraph 2005/01/22 ACM SIGGRAPH
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+\bibhang=\skip43
+\titlespace=\skip44
+\teaserspace=\skip45
+\acm@abs=\toks14
+\acm@copyrightlength=\skip46
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/mathptmx.sty
+Package: mathptmx 2005/04/12 PSNFSS-v9.2a Times w/ Math, improved (SPQR, WaS) 
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+\symbold=\mathgroup4
+\symitalic=\mathgroup5
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/ptm/m/it on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 35.
+LaTeX Info: Redefining \hbar on input line 50.
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2018/04/01 v1.8r multicolumn formatting (FMi)
+\c@tracingmulticols=\count88
+\mult@box=\box26
+\multicol@leftmargin=\dimen103
+\c@unbalance=\count89
+\c@collectmore=\count90
+\doublecol@number=\count91
+\multicoltolerance=\count92
+\multicolpretolerance=\count93
+\full@width=\dimen104
+\page@free=\dimen105
+\premulticols=\dimen106
+\postmulticols=\dimen107
+\multicolsep=\skip47
+\multicolbaselineskip=\skip48
+\partial@page=\box27
+\last@line=\box28
+\maxbalancingoverflow=\dimen108
+\mult@rightbox=\box29
+\mult@grightbox=\box30
+\mult@gfirstbox=\box31
+\mult@firstbox=\box32
+\@tempa=\box33
+\@tempa=\box34
+\@tempa=\box35
+\@tempa=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\c@columnbadness=\count94
+\c@finalcolumnbadness=\count95
+\last@try=\dimen109
+\multicolovershoot=\dimen110
+\multicolundershoot=\dimen111
+\mult@nat@firstbox=\box50
+\colbreak@box=\box51
+\mc@col@check@num=\count96
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
+\ttl@box=\box52
+\beforetitleunit=\skip49
+\aftertitleunit=\skip50
+\ttl@plus=\dimen112
+\ttl@minus=\dimen113
+\ttl@toksa=\toks15
+\titlewidth=\dimen114
+\titlewidthlast=\dimen115
+\titlewidthfirst=\dimen116
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/refcount.sty
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)) (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+))))
+\c@section@level=\count97
+LaTeX Info: Redefining \ref on input line 355.
+LaTeX Info: Redefining \pageref on input line 355.
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen117
+\Gin@req@width=\dimen118
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count98
+\float@exts=\toks17
+\float@box=\box53
+\@float@everytoks=\toks18
+\@floatcapt=\box54
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen119
+\WF@size=\dimen120
+\c@WF@wrappedlines=\count99
+\WF@box=\box55
+\WF@everypar=\toks19
+Package: wrapfig 2003/01/31  v 3.6
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2016/02/03 v2.11b `tabularx' package (DPC)
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/tools/array.sty
+Package: array 2018/04/07 v2.4g Tabular extension package (FMi)
+\col@sep=\dimen121
+\ar@mcellbox=\box56
+\extrarowheight=\dimen122
+\NC@list=\toks20
+\extratabsurround=\skip51
+\backup@length=\skip52
+\ar@cellbox=\box57
+)
+\TX@col@width=\dimen123
+\TX@old@table=\dimen124
+\TX@old@col=\dimen125
+\TX@target=\dimen126
+\TX@delta=\dimen127
+\TX@cols=\count100
+\TX@ftn=\toks21
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/breakcites/breakcites.sty) (/usr/local/texlive/2018/texmf-dist/tex/latex/parskip/parskip.sty
+Package: parskip 2001/04/09 non-zero parskip adjustments
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2018/03/24 v5.7 Page Geometry
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+) (/usr/local/texlive/2018/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count101
+\Gm@cntv=\count102
+\c@Gm@tempcnt=\count103
+\Gm@bindingoffset=\dimen128
+\Gm@wd@mp=\dimen129
+\Gm@odd@mp=\dimen130
+\Gm@even@mp=\dimen131
+\Gm@layoutwidth=\dimen132
+\Gm@layoutheight=\dimen133
+\Gm@layouthoffset=\dimen134
+\Gm@layoutvoffset=\dimen135
+\Gm@dimlist=\toks22
+) (/Users/lukasmasopust/Documents/Informatik/Master/2. Semester/Seminar in Computer Graphics/report/template.aux)
+\openout1 = `template.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 66.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+\big@size=\dimen136
+ (/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count104
+\scratchdimen=\dimen137
+\scratchbox=\box58
+\nofMPsegments=\count105
+\nofMParguments=\count106
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count107
+\MPscratchDim=\dimen138
+\MPnumerator=\count108
+\makeMPintoPDFobject=\count109
+\everyMPtoPDFconversion=\toks24
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+ (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+)) (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2018/01/30 v0.27 Utility functions of pdfTeX for LuaTeX (HO)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 438.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(85.35826pt, 426.79135pt, 85.35826pt)
+* v-part:(T,H,B)=(85.35826pt, 674.33032pt, 85.35826pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=426.79135pt
+* \textheight=674.33032pt
+* \oddsidemargin=13.08827pt
+* \evensidemargin=13.08827pt
+* \topmargin=-19.43298pt
+* \headheight=14.45377pt
+* \headsep=18.06749pt
+* \topskip=10.0pt
+* \footskip=36.135pt
+* \marginparwidth=4.0pt
+* \marginparsep=10.0pt
+* \columnsep=24.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumntrue
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 79.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1phv.fd
+File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
+)
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 79.
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 79.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
+File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 79.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omlztmcm.fd
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 79.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omsztmcm.fd
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 79.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omxztmcm.fd
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 79.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 79.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 79.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 79.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <7.4> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 79.
+<img/header.png, id=1, 729.22438pt x 277.53688pt>
+File: img/header.png Graphic file (type png)
+<use img/header.png>
+Package pdftex.def Info: img/header.png  used on input line 79.
+(pdftex.def)             Requested size: 419.16621pt x 159.53163pt.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 79.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 79.
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <6> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 79.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 84.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 90.
+
+Overfull \hbox (9.45422pt too wide) in paragraph at lines 99--99
+[][][]| 
+ []
+
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 101.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+ </Users/lukasmasopust/Documents/Informatik/Master/2. Semester/Seminar in Computer Graphics/report/img/header.png>]
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 116.
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 142.
+
+Underfull \hbox (badness 10000) in paragraph at lines 146--147
+[]\OT1/ptm/m/n/9 artificial in-tell-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 148--149
+[]\OT1/ptm/m/n/9 neuron vi-su-al-iza-
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 178--179
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 190--191
+
+ []
+
+<img/sugiyama_method_sugiyama_et_al.png, id=17, 608.2725pt x 198.7425pt>
+File: img/sugiyama_method_sugiyama_et_al.png Graphic file (type png)
+<use img/sugiyama_method_sugiyama_et_al.png>
+Package pdftex.def Info: img/sugiyama_method_sugiyama_et_al.png  used on input line 195.
+(pdftex.def)             Requested size: 195.12877pt x 63.75356pt.
+
+Underfull \hbox (badness 1755) in paragraph at lines 201--202
+[]\OT1/ptm/m/n/9 After this pre-processing phase, a se-ries of graph
+ []
+
+
+Underfull \hbox (badness 1314) in paragraph at lines 201--202
+\OT1/ptm/m/n/9 trans-for-ma-tions is ap-plied to make il-leg-i-ble graphs
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--202
+
+ []
+
+<img/transformations_Wongsuphasawat_et_al.png, id=19, 500.87125pt x 1202.4925pt>
+File: img/transformations_Wongsuphasawat_et_al.png Graphic file (type png)
+<use img/transformations_Wongsuphasawat_et_al.png>
+Package pdftex.def Info: img/transformations_Wongsuphasawat_et_al.png  used on input line 204.
+(pdftex.def)             Requested size: 195.12877pt x 468.47478pt.
+
+Underfull \hbox (badness 1755) in paragraph at lines 209--213
+[]\OT1/ptm/m/n/9 First, non-critical op-er-a-tions are de-emphasized by
+ []
+
+
+Underfull \hbox (badness 1314) in paragraph at lines 209--213
+\OT1/ptm/m/n/9 re-sources and im-prov-ing re-spon-sive-ness. Rounded
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 209--213
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--215
+
+ []
+
+[3 </Users/lukasmasopust/Documents/Informatik/Master/2. Semester/Seminar in Computer Graphics/report/img/sugiyama_method_sugiyama_et_al.png>]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 221.
+<img/tensorflow_playground_smilkov_et_al.png, id=24, 1267.73625pt x 656.4525pt>
+File: img/tensorflow_playground_smilkov_et_al.png Graphic file (type png)
+<use img/tensorflow_playground_smilkov_et_al.png>
+Package pdftex.def Info: img/tensorflow_playground_smilkov_et_al.png  used on input line 224.
+(pdftex.def)             Requested size: 426.79135pt x 220.99725pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 237--238
+
+ []
+
+<img/detection_yosinski_et_al.png, id=25, 349.305pt x 352.31625pt>
+File: img/detection_yosinski_et_al.png Graphic file (type png)
+<use img/detection_yosinski_et_al.png>
+Package pdftex.def Info: img/detection_yosinski_et_al.png  used on input line 242.
+(pdftex.def)             Requested size: 174.65207pt x 176.15768pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4 </Users/lukasmasopust/Documents/Informatik/Master/2. Semester/Seminar in Computer Graphics/report/img/transformations_Wongsuphasawat_et_al.png>]
+Underfull \hbox (badness 1242) in paragraph at lines 248--252
+\OT1/ptm/m/n/9 for the clas-si-fi-ca-tion of this DNN. The con-clu-sion
+ []
+
+
+Underfull \hbox (badness 7012) in paragraph at lines 248--252
+\OT1/ptm/m/n/9 Visualizing these \OT1/ptm/m/it/9 con-cepts \OT1/ptm/m/n/9 can yield un-ex-pected
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 248--252
+
+ []
+
+
+Underfull \hbox (badness 2384) in paragraph at lines 248--252
+\OT1/ptm/m/n/9 The sec-ond mat-ter of in-ter-est of their work was
+ []
+
+
+Underfull \hbox (badness 1515) in paragraph at lines 248--252
+\OT1/ptm/m/n/9 the in-tro-duc-tion of reg-u-lar-iza-tion op-tions that help
+ []
+
+
+Underfull \hbox (badness 1983) in paragraph at lines 248--252
+\OT1/ptm/m/n/9 same time de-crease in-ter-pretabil-ity of the neu-rons
+ []
+
+
+Underfull \hbox (badness 1024) in paragraph at lines 248--252
+\OT1/ptm/m/n/9 Yosinski et al. of-fer their project as open source
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 264--267
+
+ []
+
+
+Underfull \hbox (badness 1859) in paragraph at lines 264--267
+\OT1/ptm/m/n/9 Deconvolution heatmaps are based on the con-cept
+ []
+
+
+Underfull \hbox (badness 1221) in paragraph at lines 264--267
+\OT1/ptm/m/n/9 glance, give rea-son-able ex-pla-na-tions of a de-ci-sion,
+ []
+
+
+Underfull \hbox (badness 1371) in paragraph at lines 264--267
+\OT1/ptm/m/n/9 to Samek et al, there is no di-rect cor-re-spon-dence
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 264--267
+
+ []
+
+
+Underfull \hbox (badness 1205) in paragraph at lines 264--267
+\OT1/ptm/m/n/9 to-wards global fea-tures and shows both, lo-cal and
+ []
+
+[5 </Users/lukasmasopust/Documents/Informatik/Master/2. Semester/Seminar in Computer Graphics/report/img/tensorflow_playground_smilkov_et_al.png> </Users/lukasmasopust/Documents/Informatik/Master/2. Semester/Seminar in Computer Graphics/report/img/detection_yosinski_et_al.png>]
+<img/heatmap_samek_et_al.png, id=35, 786.94pt x 306.14375pt>
+File: img/heatmap_samek_et_al.png Graphic file (type png)
+<use img/heatmap_samek_et_al.png>
+Package pdftex.def Info: img/heatmap_samek_et_al.png  used on input line 270.
+(pdftex.def)             Requested size: 426.79135pt x 166.03455pt.
+<img/multi-facet.png, id=36, 558.085pt x 659.46375pt>
+File: img/multi-facet.png Graphic file (type png)
+<use img/multi-facet.png>
+Package pdftex.def Info: img/multi-facet.png  used on input line 280.
+(pdftex.def)             Requested size: 216.81pt x 256.19362pt.
+
+Overfull \hbox (15.41432pt too wide) in paragraph at lines 280--281
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 285--286
+
+ []
+
+<img/facet_cluster.png, id=37, 1394.20876pt x 818.05624pt>
+File: img/facet_cluster.png Graphic file (type png)
+<use img/facet_cluster.png>
+Package pdftex.def Info: img/facet_cluster.png  used on input line 293.
+(pdftex.def)             Requested size: 216.81pt x 127.20932pt.
+
+Overfull \hbox (15.41432pt too wide) in paragraph at lines 293--294
+ [] 
+ []
+
+[6 </Users/lukasmasopust/Documents/Informatik/Master/2. Semester/Seminar in Computer Graphics/report/img/multi-facet.png>]
+<img/rough_loss.jpg, id=42, 411.0842pt x 348.91646pt>
+File: img/rough_loss.jpg Graphic file (type jpg)
+<use img/rough_loss.jpg>
+Package pdftex.def Info: img/rough_loss.jpg  used on input line 313.
+(pdftex.def)             Requested size: 216.81pt x 184.01974pt.
+
+Overfull \hbox (15.41432pt too wide) in paragraph at lines 313--314
+ [][] 
+ []
+
+<img/smooth_loss.jpg, id=43, 422.74065pt x 239.34581pt>
+File: img/smooth_loss.jpg Graphic file (type jpg)
+<use img/smooth_loss.jpg>
+Package pdftex.def Info: img/smooth_loss.jpg  used on input line 320.
+(pdftex.def)             Requested size: 231.26378pt x 130.93573pt.
+
+Overfull \hbox (29.8681pt too wide) in paragraph at lines 320--321
+ [][] 
+ []
+
+[7 </Users/lukasmasopust/Documents/Informatik/Master/2. Semester/Seminar in Computer Graphics/report/img/heatmap_samek_et_al.png> </Users/lukasmasopust/Documents/Informatik/Master/2. Semester/Seminar in Computer Graphics/report/img/facet_cluster.png> </Users/lukasmasopust/Documents/Informatik/Master/2. Semester/Seminar in Computer Graphics/report/img/rough_loss.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 341--343
+
+ []
+
+
+Underfull \hbox (badness 2735) in paragraph at lines 367--369
+\OT1/ptm/m/n/9 prob-lems of the vi-sual rep-re-sen-ta-tion of neu-ronal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 367--369
+
+ []
+
+[8 </Users/lukasmasopust/Documents/Informatik/Master/2. Semester/Seminar in Computer Graphics/report/img/smooth_loss.jpg>]
+Underfull \hbox (badness 3471) in paragraph at lines 370--371
+\OT1/ptm/m/n/9 overview on the cur-rent state-of-the-art in neu-ral
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 370--371
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 372--373
+
+ []
+
+(/Users/lukasmasopust/Documents/Informatik/Master/2. Semester/Seminar in Computer Graphics/report/template.bbl
+Underfull \hbox (badness 1052) in paragraph at lines 22--27
+[]\OT1/ptm/m/sc/9 Samek, W., Binder, A., Mon-tavon, G., La-
+ []
+
+) [9] (/Users/lukasmasopust/Documents/Informatik/Master/2. Semester/Seminar in Computer Graphics/report/template.aux) ) 
+Here is how much of TeX's memory you used:
+ 3142 strings out of 492649
+ 47583 string characters out of 6129622
+ 129425 words of memory out of 5000000
+ 6921 multiletter control sequences out of 15000+600000
+ 45891 words of font info for 91 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 42i,12n,28p,1390b,317s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on "/Users/lukasmasopust/Documents/Informatik/Master/2. Semester/Seminar in Computer Graphics/report/template.pdf" (9 pages, 12499110 bytes).
+PDF statistics:
+ 89 PDF objects out of 1000 (max. 8388607)
+ 51 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+

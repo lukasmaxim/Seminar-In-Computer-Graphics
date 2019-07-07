@@ -1,0 +1,379 @@
+\documentclass{acmsiggraph}               % final
+%\documentclass[review]{acmsiggraph}      % review
+%\documentclass[widereview]{acmsiggraph}  % wide-spaced review
+%\documentclass[preprint]{acmsiggraph}    % preprint
+
+%% Uncomment one of the four lines above depending on where your paper is
+%% in the conference process. ``review'' and ``widereview'' are for review
+%% submission, ``preprint'' is for pre-publication, and ``final'' is for
+%% the version to be printed.
+
+%% These two line bring in essential packages: ``mathptmx'' for Type 1 
+%% typefaces, and ``graphicx'' for inclusion of EPS figures.
+
+\usepackage{mathptmx}
+\usepackage{times}
+\usepackage{multicol}
+\usepackage{titlesec}
+\usepackage{nameref}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{tabularx}
+\usepackage{breakcites}
+
+%% use this for zero \parindent and non-zero \parskip, intelligently.
+
+\usepackage{parskip}
+
+\usepackage[a4paper,left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+%\newcommand{\sectionbreak}{\clearpage}
+\newcommand{\paragraphbr}[1]{\paragraph{#1}\mbox{}\\}
+
+\graphicspath{ {img/} }
+
+%% If you are submitting a paper to the annual conference, please replace 
+%% the value ``0'' below with your OnlineID. If you are not submitting this
+%% paper to the annual conference, you may safely leave it at ``0'' -- it 
+%% will not be included in the output.
+
+\onlineid{0}
+
+%% need to document this!
+
+\acmformat{print}
+
+%% Paper title.
+
+\title{Visualization of Neural Networks}
+
+%% Author and Affiliation (single author).
+
+%%\author{Roy G. Biv\thanks{e-mail: roy.g.biv@aol.com}\\Allied Widgets Research}
+
+%% Author and Affiliation (multiple authors).
+
+\author{David Bauer\thanks{e-mail: e01442385@student.tuwien.ac.at}\\ TU Wien %
+\and Lukas Maximilian Masopust\thanks{e-mail: e01427382@student.tuwien.ac.at}\\ TU Wien %
+}
+
+%% Keywords that describe your work.
+
+\keywords{machine learning, neural network, deep neural network, deep learning, heatmapping, activation, graphs, visualization}
+
+%%%%%% START OF THE PAPER %%%%%%
+
+\begin{document}
+
+\teaser{
+  \vspace{0.4in}
+  \includegraphics[width=5.8in]{header}
+  \vspace{0.5in}
+}
+
+
+
+%% The ``\maketitle'' command must be the first command after the
+%% ``\begin{document}'' command. It prepares and prints the title block.
+
+\maketitle
+
+
+%% Abstract section.
+
+\begin{abstract}
+Recent years have seen a surge in the application of machine learning - especially deep learning. These methods enable us to solve problems which seemed too complex for traditional methods just ten years ago. With these advances also come new problems. Neural networks are highly complex structures. Their internal configuration changes constantly during training and with increasing numbers of neurons it is hard to comprehend how each individual component influences the outcome of predictions.
+In this paper we look at several ways to reduce complexity by visualizing different aspects of neural networks. Approaches range from displaying a simplified version of the graph-like structure of a network to visualizing activation maps of single neurons. There are also ways to generate terrain-like plots of error functions. This is especially useful in situations where finding local minima might not be trivial.
+This state-of-the-art report gives a rough overview of the wide variaty of different ways to approach the ever increaing complexity inherent to neural networks.
+\end{abstract}
+
+\keywordlist
+
+\section{Introduction}
+
+%% The ``\copyrightspace'' command must be the first command after the 
+%% start of the first section of the body of your paper. It ensures the
+%% copyright space is left at the bottom of the first column on the first
+%% page of your paper.
+
+\copyrightspace
+
+\subsection{Background and Motivation}
+As the both of us work in the field of medical informatics where we currently develop neural networks for bone assessment, we oftentimes wonder what actually happens inside the networks we train and evaluate. Since, as of now, there does not appear to be lots of focus on neural visualization (at least in our working field), we thought it to be interesting, not only to us, but for everybody involved in working in machine learing on what current approaches to visualization might be.
+
+\subsection{The Problem}
+Data, especially large collections of analytical data in various fields of science, can pose enormous challenges for the people involved in analysing these data. Datasets often succeed the limits of intuitive comprehensibility.\\
+One approach, that is frequently used to surmount these large amounts of data are computer aided visualizations. They are a powerful tool to categorize, classify, analyse and visually process data to make it more understandable. For instance, when looking at data in tabular form, it is typically harder to grasp its meaning as opposed to looking at the same data processed as a graph or bar chart.
+
+The problem we will be discussing in this paper is the usage of visualization techniques for processing data, that comes from neural networks. Aside from solely working on the visualization on a layer-level (which will still be the main focus of this work), we also want to give readers a more meta-level picture visualizing neural networks as a whole.
+
+\subsection{Our Contribution}
+As we soon saw, this is a rather niche problem to which good literature is scarce. We contribute to the stated problem by giving a comprehensive overview on the matter and explaining different ways in which aspects of neural networks can be visualized.
+
+\subsection{Fundamental Terms and Basic Definitions}
+Since not every reader can be expected to be familiar with the terminology of machine learning, we will define the the two most important concepts used in this work here.
+
+\paragraph{Machine Learning (ML)}
+Traditionally computers where designed to be programmed with specific instructions, which had been executed in an orderly fashion.
+Machine learning changes these paradigms drastically. The core principal of machine learning is that computers work with data autonomously and extract information on their own. What these procedures are programmed to do is to approximate a pre-defined goal. This concept is best portrayed by an example:\\
+Assuming the goal is to identify handwritten numbers, the machine learning algorithm is provided with the raw image of the written symbol. At first it will guess at random which number was represented by the drawing. 
+After each guess it receives the correct answer. It then adjusts its parameters to fit the desired outcome.
+This process is repeated many times with different symbols until the parameters are adjusted so precisely that the algorithm - which is called a model in the machine learning domain - can detect any arbitrary handwritten number.\\
+The example above is fairly simple but this process works for any task designed to identify or classify data, given enough raw input material. One, maybe more significant application, is to classify histological images in terms of cancerous cell expression, which could lead to early diagnosis of tumors.
+
+\paragraph{Deep Neural Network (DNN)}
+A network of linked computational nodes, aiming to mimic the way our brain works. Each node has input and output channels and a function \textit{F} to determine output from input. Neural networks are a sub-category of ML that build upon its basic concepts. Only in recent years it has become possible to use vast DNNs due to the increased performance of modern-day GPUs. Since those networks can house millions of parameters and with deep learning being applied in nearly every area of today's problem-solving, visualization in this area has lacked behind significantely. Therefore, DNNs are sometimes regarded as \textit{black-bloxes} with no clear insight into their decision-making process.
+
+\subsection{Outline}
+Following this introduction, we will explain how we came to find the literature we are reviewing and see which results we obtained from our work. Furthermore there will be a discussion as to how to interpret our findings and how visualization techniques could be employed in the field of future neural network visualization.
+
+\section{Method}
+While machine learning has been applied to lots of problems in the past, recent years have seen an unprecedented rise in the application of neural networks for problem solving, especially with the ongoing hype of deep learning. Due to this rise, visualization approaches have lacked behind, rendering machine learning to be this oftentimes so-called \textit{black box}. Hence, publications that are older than a few years cannot be assessed in this STAR, which is why we aimed at finding the most recent papers on the topic and also tried to include approaches from Google, arguably one of the most important players in today's machine learning field.
+
+\subsection{Sources and Search Strategies}
+As it is typical for literature lists, we only chose some of the papers submitted in the original hand-in, after carefully reviewing their approaches. Therefore, we added additional works we found to be interesting regarding neural network visualization.
+
+For choosing the works we wanted to include in this STAR, we chose IEEE Xplore, Google Scholar and Elsevier as our primary sources. Relevant publications were mainly obtained from the websites of Springer, the Cornell University Library and IEEE Xplore.
+
+In order to make our results reproducible, we list our search terms in a list below.
+
+\begin{multicols}{2}
+\begin{itemize}
+\item machine learning
+\item deep learning
+\item neural network
+\item deep neuronal network
+\item artificial intellgence
+\item layer visualization
+\item neuron visualization
+\item deep visualization
+\item data visualization
+\item graph visualization
+\item interactive visualization
+\item user interaction
+\item flow layout
+\end{itemize}
+\end{multicols}
+
+Those terms were either used on their own or in combination with others.
+
+\subsection{Criteria and Constrains}
+As one can imagine, the listed search terms above will provide quite a lot of publications relevant to neural network visualization, which is why we will briefly explain how we decided on the papers relevant to our work.
+
+Since not every paper about machine learning is also discussing visualization, we discarded those that were not specifically focussed on the visual representation of data. Further, as discussed above, we only took papers into consideration that had a fairly close publication date to 2019, which is why the \textit{oldest} publication we used for this STAR was released in 2015. Also, we aimed at only using papers that had a high citation count which is a common measure to evaluate the importance of a publication.
+
+\subsection{Results and Omissions}
+% TODO: delete or expand this boi
+To choose literature relevant for this STAR we first read through the abstract of every publication on our shortlist. Then, by also reading the conclusion we decided which publications were significant to this work.
+
+\section{Results}
+\subsection{Network Structure Visualization}
+\subsubsection{TensorFlow's Visualization API}
+Because Google is the major player in today's machine learning field, this section will address how their ML platform TensorFlow handles visualization.
+
+In their paper, Wongsuphasawat et al. explain the design and background of the visualization process Google's API uses to give users a visual overview of their underlying neural network structure and dataflow. \cite{Wongsuphasawat2018}
+
+Because the visualization of said models can contain thousands of low-level operations, standard layout techniques such as flow layouts can produce diagrams that are difficult to read. Therefore, TensorFlow is bundled with a Graph Visualizer that, according to user feedback included in their paper, enhances the comprehensibility of model structures.
+
+\paragraphbr{Goals}
+
+To gain a good understanding of what potential users might find helpful when visualizing their networks, Wongsuphasawat et al. consulted people involved in ML. Results suggested the importance of the following points:
+
+\begin{itemize}
+  \setlength\itemsep{0em}
+  \item Overview of high level components
+  \item Differentiation and similarities of components
+  \item Examination of nested structures
+  \item No referring back to code to gain knowledge of details
+\end{itemize}
+
+\paragraphbr{TensorFlow Graph Visualizer}
+
+Wongsuphasawat et al.'s visualization approach is based on a standard flow layout algorithm that was introduced by Sugiyama et al., representing directed graphs in a flow layout. \cite{Sugiyama1981} This method of visualizing graphs (Figure \ref{fig:sugiyama_method}) first removes cycles as well as layers and orders nodes. Afterwards, coordinates are assigned.
+
+\begin{figure}[H]
+\includegraphics[width=2.7in]{sugiyama_method_sugiyama_et_al}
+\caption{Sugiyama's method for visualizing graphs \protect\cite{Sugiyama1981}}
+\label{fig:sugiyama_method}
+\centering
+\end{figure}
+
+After this pre-processing phase, a series of graph transformations is applied to make illegible graphs easier to read (Figure \ref{fig:transformations}). \\
+
+\begin{figure}[!htb]
+\includegraphics[width=2.7in]{transformations_Wongsuphasawat_et_al}
+\caption{TensorFlow's graph transformations \protect\cite{Wongsuphasawat2018}}
+\label{fig:transformations}
+\end{figure}
+
+First, non-critical operations are de-emphasized by extracting them from the layout and depicting them as either small circles or bar chart icons, depending on their role. The paper states, that those operations account for approximately 30\% of a typical network.\\
+In the second phase, edges are bundled and a clustered graph is formed. Here, edges only connect nodes that are siblings in the hierarchy. This ensures that on interaction only subgraphs need to be refreshed, saving resources and improving responsiveness. Rounded rectangles represent group nodes, that are grouped by unique namespaces, such as "train".\\
+As in the first step, in the third stage, non-critical nodes are extracted from each subgraph, rather than from the graph as a whole. Extracted nodes are thereby placed on the right side, as shown in Figure \ref{fig:transformations}-d. Connecting nodes are also represented and give additional information, when hovered over. A set of heuristics is used to determine non-critical nodes, including searching for declaring and initializing variables.\\\\
+As can be seen in Figure \ref{fig:transformations}, this process declutters the graph by a high degree. Since Wongsuphasawat et al. use heuristics in some cases, unwanted results can be overruled by the user afterwards.
+
+\paragraphbr{Feedback}
+
+Wongsuphasawat et al. gathered internal and external feedback regarding this visualization approach. Unfortunately their paper doesn't provide any kind of statistical evaluation, thereby rendering a scientific comparison useless. According to them, internal feedback gathered by questionnaires was overwhelmingly positive, whereas anonymous feedback found online had a "positive undertone" \cite[p.~9]{Wongsuphasawat2018}.
+
+\subsubsection{TensorFlow Playground}
+
+In their paper, Smilkov et al. describe how Google's TensorFlow Playground aims at giving non-experts a quick and easy way into ML. Since the inner workings can sometimes become hard to read and interpret, the goal was to offer an interactive demo of an already trained deep neuronal network. TensorFlow Playground is an open-source in-browser tool that wants to give "novices with mathematical and practical intuition" \cite[p.~1]{Smilkov2017} a shortcut to understanding the basics of ML.\\
+Their tool offers a network diagram of a DNN that is designed to solve classification or regression problems. As we can see in Figure \ref{fig:tensorflow_playground}, a circular shape with blue and orange dots can be used as training data. Two abstract features, x\textsubscript{1} and x\textsubscript{2} are then used to generate the gradient that can be seen in the neurons. In this way, users are able to see the different stages of data discrimination within the structure of a neural network. The combination of all neurons is then used to generate a heatmap on the right site that represents the output of the network. With more iterations and therefore more training, one can see, that the blue dots are separated better from the orange ones over time, giving a visual representation of the mathematics underlying the network.
+
+\begin{figure*}
+\includegraphics[width=\textwidth]{tensorflow_playground_smilkov_et_al}
+\caption{TensorFlow Playground \protect\cite{Smilkov2017}}
+\label{fig:tensorflow_playground}
+\centering
+\end{figure*}
+
+Smilkov et al.'s playground offers people, as for example students, an easy way to experiment with a network without any prior coding experience. While the mathematics behind deep learning can sometimes feel overwhelming for newcomers, their website offers a much more straight-forward approach to visualization of complex functions. According to their paper, TensorFlow Playground has gained positive reactions on the internet, although no statistical evidence was offered to support their claim.
+
+\subsection{Network Activation Visualization}
+\subsubsection{Multi-Neuron Actiavtions}
+Another way to interpret visualization of DNNs, is to give a visual representation of the layers a network uses for its decision making itself.\\ 
+In their paper, Yosinski et al. describe tools they developed, that enable the user to see what each neuron sees, or expects to see, thereby making it easier to understand what a network actually interprets on the level of single neurons. \cite{Yosinski2015}
+
+\paragraphbr{Concept}
+
+Yosinski et al.'s method uses the input of a webcam to demonstrate the action function, which is the optimal activation for each neuron respectively. This can be thought of as the input (image) that a neuron expects to see. These visual clues are then used to generate the final decision a network makes about a certain input.
+
+\begin{figure}[H]
+\includegraphics[scale=0.5]{detection_yosinski_et_al}
+\caption{Activations for faces in a DNN trained to recognize human and animal faces \protect\cite{Yosinski2015}}
+\label{fig:face_detection}
+\centering
+\end{figure}
+
+As an example, a network that is trained to classify human and animal faces can be used to gather knowledge about the role each neuron plays in a network. In Figure \ref{fig:face_detection} we can see what parts of the input images matter for the classification of this DNN. The conclusion they drew from such analysis is, that layers appear to be quite local, meaning that instead of the expected distribution on all layers, there are specific neurons that show a higher reaction to e.g. edges, thereby creating, in combination with other neurons, detectors for more complex concepts. Different features can then make up whole objects, such as animals. \\Visualizing these \textit{concepts} can yield unexpected behaviour. For example, a network that was trained to detect environments, such as playgrounds, shows some layers that tend to look for the faces of children, even if this input data was not trained intentionally.\\\\
+The second matter of interest of their work was the introduction of regularization options that help  generating images that are visually better interpretable.\\
+First a decay function is used to decrease the importance of high values that otherwise would change the bias into an unfavorable direction. Secondly, a Gaussian blur is applied to decrease the number of high frequencies. If included, those high frequencies would result in generally favorable high activations but would at the same time decrease interpretability of the neurons attributes. Next, pixels that contain information close to zero are thresholded, since they usually do not contain relevant features. Further, they zero-clipped pixels that only led to low activation.\\
+Yosinski et al. offer their project as open source interactive tools, thereby making DNNs more accessible for everybody interested in seeing what a DNN actually \textit{sees}.
+
+\subsubsection{Regional Relevance Visualization}
+Similar to the paper discussed above, Samek et al. are also proposing an approach to visualize regional perturbation leading to a recognition decision via heatmaps. \cite{Samek2017} \\
+To demonstrate what specific regions or features of an image are of greater or smaller importance, they compare three ways of generating heatmaps:
+
+\begin{itemize}
+  \setlength\itemsep{0em}
+  \item Sensitivity Analysis
+  \item Deconvolution Method
+  \item LRP Algorithm
+\end{itemize}
+
+Sensitivity heatmaps utilize sensitivity analysis. This means that the local sensitivity is used to demonstrate what, for example, makes a bird more or less likely to be interpreted as a bird. Therefore this method shows how small changes in a single pixel value influence the output of a network as a whole. Large values indicate that a pixel has a severe effect on the classification function. Since this approach focusses on local features, global features are underrepresented, leading to the drawback that the generated heatmap does not fully explain a classification of an image.\\\\
+Deconvolution heatmaps are based on the concept of mapping activations of a network's output to pixel space via backpropagation. This method will, at first glance, give reasonable explanations of a decision, since the heatmap shows a matching input pattern for a classification object, meaning that the contours of a bird will be highlighted. The downside is, that, according to Samek et al, there is no direct correspondence between the generated scores and the contribution of an individual pixel to the overall decision.\\\\
+Relevance heatmaps appear to be the most promising approach. They use Layer-wise Relevance Propagation (LRP) to deconstruct a decision into the relevances on a pixel level, therefore showing the contribution of a individual pixel to the end-result. This technique, compared to sensitivity heatmaps, is far more favorable towards global features and shows both, local and global impact in its heatmap. The most apparent benefit of LRP heatmaps is, that they not only visualize the positive evidence for a certain classification, but also show what pixel data had a negative impact on the decision. In the example shown below (Figure \ref{fig:heatmap_numbers}) we can see that LRP, compared to deconvolution, highlights positive evidence as red, but also negative evidence, that, for example, speaks against the decision that the given image represents a 9.
+
+\begin{figure*}
+\center
+\includegraphics[width=\textwidth]{heatmap_samek_et_al}
+\caption{Heatmaps for classification of numbers \protect\cite{Samek2017}}
+\label{fig:heatmap_numbers}
+\end{figure*}
+
+\subsubsection{Multifaceted Feature Visualization}
+In neural networks, each neuron detects one or more features that are further propagated for the decision-making process. Individual features can be visualized as we have seen in the previously discussed publications, but so far we have not covered the visualization of multifaceted features in a single neuron. In their paper, Nguyen et al. discuss the importance of visualizing those for more complex scenes, where multiple features achieve the highest activation in a neuron. \cite{Nguyen2016} Previous work, they state, did not take those multiple facets into consideration, which led to mixes of e.g. colors or objects. Therefore, their work focusses on demonstrating an algorithm that produces syntheteic images which correspond with the highest activation of a neuron (Figure \ref{fig:multi}). For example a bell pepper classifier has to deal with red, green and yellow bell peppers. So there may be different images (facets) that achieve optimal activation. In this case differently colored and orientent bell peppers. So there is no one single image that creates maximum activation. The aim of this work was to create reprentations that take this attribute of classifiers into account and give a more accurate depiction of optimal, multi-facetted inputs.
+
+\begin{figure}[H]
+\center
+\includegraphics[width=3in]{multi-facet}
+\caption{On the top, we see 8 feature facets that activate the same neuron which was trained to identfy grocery stores. Those images were synthetically created. On the bottom, the corresponding training images that were used for initial training. \protect\cite{Nguyen2016}}
+\label{fig:multi}
+\end{figure}
+
+\paragraphbr{Concept}
+
+Nguyen et al.'s deep visualization approach relies on a CaffeNet-based architecture DNN that was trained on the ImageNet dataset. They use an optimization algorithm that aims at optimizing the color-values of the pixels in an image to achieve maximum activation in a given neuron.
+
+Simplifying the approach for the sake of this STAR, their algorithm uses a DNN's abstract knowlege of a class. This information is then clustered which yields several clustering centers which all represent different facets of this particular classifier. To obtain the maximum activation image of a facet, the centroid of the cluster is calculated an conventional input maximazation techniques are used to produce a part of the final representation. This process is repeated for all cluster centroids to obtain the final, combined representation of the multi-facetted maximum input.
+
+\begin{figure}
+\center
+\includegraphics[width=3in]{facet_cluster}
+\caption{Illustration of the facet cluster from which the final facetted representation is generated \protect\cite{Nguyen2016}}
+\label{fig:facet_cluster}
+\end{figure}
+
+An exmaple for such a facet cluster can be seen in Figure \ref{fig:facet_cluster}.
+
+
+\subsection{Network Error and Loss Visualization}
+In some cases it is more desirable to explore neural networks in terms of training data and loss rather than looking at an already trained model.
+The inherent difficulty when choosing a particular network architecture is knowing how hard it will be with given training data to reach a global minimum in the error function and therefore reach optimal network performance.
+
+\subsubsection{Loss Landscapes}
+Efforts have been made to visualize these so-called loss landscapes, which are essentially three-dimensional plots of loss functions \cite{Li2017}.
+One problem that typically arises from these kinds of visualizations it that it is not immediatly apparent to what degree changes in the network weights influence the change in error. In other words, it is hard to estimate how rough or smooth the loss landscape is. This problem is due to the scale invariance of network weights, since most networks use normalization techniques. In that way relative changes in weights and activation intensity do not play a role in the actual performance of the network. Li et al. have shown how to solve the problem of scale invariance \cite{Li2017}. In general a smooth landscape is more desirable since chances of getting stuck in a local minimum are smaller than in really noisy, spiky environments. Sharpness or flatness of the minima themselves also plays a role and is, in most cases, directly connected to the roughness of the loss surface.
+
+It is important to note that the morphology of loss landscapes highly depends on the chosen network architecture. So small changes can have a great impact on the outcome loss-wise. See Figures \ref{fig:rough_loss} and \ref{fig:smooth_loss} which is the same ResNet with (\ref{fig:smooth_loss}) and without (\ref{fig:rough_loss}) so-called skip connections, which are structural modifications of a standard network \cite{He2015}.
+
+\begin{figure}
+\centering
+\includegraphics[width=3in]{rough_loss}
+\caption{Rough loss landscape of a ResNet-56 \protect\cite{Li2017}}
+\label{fig:rough_loss}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=3.2in]{smooth_loss}
+  \caption{Smooth loss landscape of a ResNet-56 with skip-connections \protect\cite{Li2017,He2015}}
+  \label{fig:smooth_loss}
+\end{figure}
+
+It becomes immediatly clear from these examples that visualizing these landscapes can be a great benefit when developing new kinds of networks because it enables researchers to see the imapct of their modification at the first glance whereas mere mathematical descriptions of the changes may not convay this information as easily.
+
+\subsubsection{Filter-Wise Normalization}
+
+To address the issue of scale invariance Li et al. proposed a method called Filter-Wise Normalization. In this approach the loss surface surface is generated by evaluating the error function in random directions $d$. Conventionally this was prone to the particular scale of the neurons. To avoid this, instead of using these directions $d$ directly, they are first normalized in respect to each indiviual filter/neuron.
+
+\begin{figure}
+\begin{equation}
+  d \Leftarrow \frac{d}{\left\Vert d \right\Vert} \left\Vert\theta\right\Vert
+\end{equation}
+\caption{Simplified version of the original normalization equation, where $\theta$ denotes the network weights \protect\cite{Li2017}}
+\end{figure}
+
+This new method allows the creation of plots that are comparable among each other.
+
+\section{Discussion}
+In the results section of this report we have seen that there are two main categories of ML visualization. A neuronal network can be visualized on a meta level by representing the structure of its nodes and high level constructs in the form of graphs. Compared to that, the direct input, output and everything that happens in between can also be visualized to give the user a better understanding of the actual inner workings of a network.\\
+In this section we will write about every of the individual categories listed above individually and discuss the pros and cons of every approach.\\
+
+\subsection{Network Structure Visualization}
+
+We have looked at the way Google's TensorFlow utilizes algorithms on directed graphs to make complex neuronal networks easier to read \cite{Wongsuphasawat2018}. Because being available within their API, this is a feature that is likely to be beneficial for everyone who uses TensorFlow as their ML platform. As seen in Figure \ref{fig:transformations}, Google's approach does make convoluted graphs very much readable which allows for an improved analysis of ML models. Since there is no obvious downside to their approach, it can only be noted that it would be beneficial if they would provide actual evidence that their visualization was well received as they claim in their paper.
+
+As seen in the work of Smilkov et al., there is a great need for visualizing the so-called \textit{black box} that neural networks can sometimes seem to be \cite{Smilkov2017}. Therefore we discussed their method of visualizing networks for teaching and learning, TensorFlow Playground.
+
+\subsection{Network Activation Visualization}
+
+Yosinski et al. offer an open source project that aims to show the visual input and interpretation from every layer to every neuron of a DNN \cite{Yosinski2015}. They therefore offer a very interesting insight into how a neuronal network actually generates an output and therefore classifies an image.
+
+With their work on heatmaps, Samek et al. have shown, as Yosinski et al., that the knowledge about the workings of individual components can be quite insightful for engineers of a DNN. They proposed different ways of representing the decision-making-process of a neural network as heatmaps \cite{Samek2017}. We have seen, that there were clear advantages with some approaches, such as LRP, where even negative evidence against a decision can be shown. It seems clear that the usage of discussed techniques would be greatly beneficiary for people working on optimizing the performance of specific neural networks.
+
+\subsection{Network Error and Loss Visualization}
+
+Li et al. have shown how visualizing loss functions can aid and accelerate the development of new network architectures \cite{Li2017}.
+With their example about skip connections \cite{He2015} they show impact on generalization performance of a particular network can be easily determined by employing visual representations of the loss function.
+
+Their contribution of normalized evaluation of loss surfaces in the form of Filter-Wise Normalization further improves the comparability of different network architectures. This greatly aids researchers that try to quickly evaluate proposed changes to already established architectures.
+
+\subsection{Summary}
+The discussed papers provided an interesting look at the current state-of-the-art in the visualization of ML models. In general, we can discern that visualization in ML is seen as a tool to make DNNs easier accessible and better modifiable. Whether on a meta-level or down to the visualization of a single neuron, the approaches discussed above all focus on making ML more understandable and more beginner-friendly. Since the wide applications of deep learning are just at the beginning of being fully understood and utilized, visualization will most probably play a major role in the neural networks of the future, especially since increased computational power will lead to more complex and advanced models in the future.
+
+\section{Conclusion}
+In this STAR we have seen interesting and novel ways of visualizing DNNs. We discussed the benefits and shortcomings of approaches. Those approaches went from high-level to low-level and tried to solve different problems of the visual representation of neuronal networks.\\
+We have talked about how neural networks are represented on a meta-level and how a network can be seen on the level of a single neuron. We have also talked about the benefits of visualization of entire networks for optimizing and studying DNNs closer. Furthermore we looked at ways to visualize loss and error functions of particular architectures.\\
+
+The aim of this paper was to give a comprehensive overview on the current state-of-the-art in neural network visualization. This was achieved by carefully selecting relevant and recent work in the field.\\
+
+The discussed papers provided an interesting look at the current state-of-the-art in the visualization of ML models. In general, we can discern that visualization in ML is seen as a tool to make DNNs more accessible and easier to modify. Whether on a meta-level or down to the visualization of a single neuron, the approaches discussed above all focus on making neural networks more understandable and more user-friendly. Since the wide applications of machine learning are just at the beginning of being fully understood and utilized, visualization will most probably play a major role in the development of DNNs in the future, especially because, with increased computational power, neuronal networks will grow even more complex.\\
+
+The visualization of neural networks is important and will become more relevant in the future, as machines and networks advance over time. There is still a lot of work to be done but there are already promising approaches and there is quite a lot of research in the field. Significant global companies like Google or Facebook are also interested in pushing this aspect of neural networks. Further, we want to highlight, that a lot of the projects regarding visualization in this field are open source and easily accessible for anybody interested in getting started with deep learning. 
+
+\bibliographystyle{acmsiggraph}
+\nocite{*}
+\bibliography{template}
+\end{document}
