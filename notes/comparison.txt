@@ -1,0 +1,26 @@
+In this chapter, we are comparing the papers presented in the previous section. 
+The categories are loosely based on the work of Hohman et al who did a comprehensive survey of the state-of-the-art of visual analytics in deep learning.
+In their paper, they treat the WHY, WHAT, WHEN, WHO, HOW and WHERE of visual analytics in this area.
+We will focus on the WHAT, HOW and WHEN in this chapter. This means that the papers of this work will be compared and categorized based on what specific data domain of deep learning they are visualizing and what means have been used to visualize that data. Additionally, it is important to understand if this is done during or after training (WHEN).
+
+Hohman et al propose several categories of which we will use the following for our purpose.
+
+What data is visualized?
+
+Computational Graph and Network Architecture
+Neural Network Edge Weights
+Convolutional Filters
+Activations
+Error Gradients
+Model Metrics
+
+How is the data visualized?
+Node-link Diagrams
+Dimensionality Reduction and Scatter Plots
+Line Charts
+Interactive Experimentation
+Algorithms for Attribution and Feature Visualization
+
+When is the data visualized?
+During Training (Online)
+After Training (Offline)
