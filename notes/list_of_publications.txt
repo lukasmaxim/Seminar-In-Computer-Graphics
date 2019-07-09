@@ -1,0 +1,9 @@
+Wongsuphasawat - TensorFlow
+Smilkov - TensorFlow Playground
+Yosinski - Activation Maps
+Samek - Regional Relevance Maps
+Nguyen - Multifaceted Feature Visualization
+Li - Loss Landscapes
+Liu16 - Towards Better DNN Visualization
+Liu17 - DGMTracker
+Wang - GAN Analysis
