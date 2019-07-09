@@ -68,6 +68,7 @@
 \teaser{
   \vspace{0.4in}
   \includegraphics[width=5.8in]{header}
+  \caption{\protect\cite{Li2017}}
   \vspace{0.5in}
 }
 
@@ -283,7 +284,7 @@ The aim of this work was to create reprentations that take this attribute of cla
 
 \begin{figure}[H]
 \center
-\includegraphics[width=3in]{multi-facet}
+\includegraphics[width=2.75in]{multi-facet}
 \caption{On the top, there are eight feature facets that activate the same neuron which was trained to identfy grocery stores. Those images were synthetically created. On the bottom, the corresponding training images that were used for initial training \protect\cite{Nguyen2016}.}
 \label{fig:multi}
 \end{figure}
@@ -296,7 +297,7 @@ Simplifying the approach for the sake of this state-of-the-art report, their alg
 
 \begin{figure}
 \center
-\includegraphics[width=3in]{facet_cluster}
+\includegraphics[width=2.75in]{facet_cluster}
 \caption{Illustration of the facet cluster from which the final facetted representation is generated \protect\cite{Nguyen2016}}
 \label{fig:facet_cluster}
 \end{figure}
@@ -316,14 +317,14 @@ It is important to note that the morphology of loss landscapes highly depends on
 
 \begin{figure}
 \centering
-\includegraphics[width=3in]{rough_loss}
+\includegraphics[width=2.75in]{rough_loss}
 \caption{Rough loss landscape of a ResNet-56 \protect\cite{Li2017}}
 \label{fig:rough_loss}
 \end{figure}
 
 \begin{figure}
   \centering
-  \includegraphics[width=3in]{smooth_loss}
+  \includegraphics[width=2.75in]{smooth_loss}
   \caption{Smooth loss landscape of a ResNet-56 with skip-connections \protect\cite{Li2017,He2015}}
   \label{fig:smooth_loss}
 \end{figure}
@@ -383,12 +384,12 @@ The visualization of neural networks is important and will become more relevant 
 
 \section{New Papers - Overview}
 \subsection{Towards Better Analysis of Deep Convolutional Neural Networks}
-In their paper, Liu et al. introduce a  visualization approach for visualizing deep convolutional neural networks (CNNs). CNNs present a major challenge for scientists and experts working with them for a number of reasons as detailed in their work. First, neural networks can consist of hunderds of individual layers that themselves are made up of thousands of neurons. This inherent problem makes analysis on a neuron-level difficult. Secondly, training a CNN is a time-intensive task, where training can last for hours, days, or even weeks. Therefore, the correct identification of potential problems is key to saving time and resources.\\
+In their paper, Liu et al. introduce a  visualization approach for visualizing deep convolutional neural networks (CNNs) \cite{Liu2016}. CNNs present a major challenge for scientists and experts working with them for a number of reasons as detailed in their work. First, neural networks can consist of hunderds of individual layers that themselves are made up of thousands of neurons. This inherent problem makes analysis on a neuron-level difficult. Secondly, training a CNN is a time-intensive task, where training can last for hours, days, or even weeks. Therefore, the correct identification of potential problems is key to saving time and resources.\\
 
 \begin{figure}
   \centering
-  \includegraphics[width=3in]{cnnvis}
-  \caption{Sample image of CNNVis. \protect\cite{}}
+  \includegraphics[width=2.75in]{cnnvis}
+  \caption{Sample image of CNNVis. \protect\cite{Liu2016}}
   \label{fig:cnnvis}
 \end{figure}
 
@@ -412,8 +413,8 @@ Since we don't want to focus on every detail of how their process works, we'll o
 
 \begin{figure}
   \centering
-  \includegraphics[width=3in]{cnnvis_detail}
-  \caption{Sample image of CNNVis. \protect\cite{}}
+  \includegraphics[width=2.75in]{cnnvis_detail}
+  \caption{Sample image of CNNVis. \protect\cite{Liu2016}}
   \label{fig:cnnvis_detail}
 \end{figure}
 
@@ -424,7 +425,7 @@ To summarize, Liu et al.'s application is a good way to visualize deep neural ne
 \subsection{Towards Better Analysis of Deep Convolutional Neural Networks}
 
 \subsection{Analyzing the Training Processes of Deep Generative Models}
-In their paper, Liu et al developed the tool DGMTracker, which allows experts to analyze deep generative models -- the most popular version being the generative adversarial network (GAN) -- at different granularities \cite{Mengchen2018}. 
+In their paper, Liu et al developed the tool DGMTracker, which allows experts to analyze deep generative models -- the most popular version being the generative adversarial network (GAN) -- at different granularities \cite{Liu2018}. 
 DGMTracker offers the following three modules. Snapshot-, layer- and neuron-level analysis.
 To achieve this, DGMTracker is divided into two modules. Data flow visualization and Training dynamics analysis.
 Data flow visualization focuses on the general flow of input data towards the output layer. Experts can analyze hotspots and bottlenecks using this flow data. DGMTracker offers snapshot- and neuron-level analysis of data flow data.
@@ -434,8 +435,8 @@ An overview if DGMTracker's architecture can be seen in Figure \ref{fig:mengchen
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=3in]{mengchen1}
-  \caption{\protect\cite{Mengchen2018}}
+  \includegraphics[width=2.75in]{mengchen1}
+  \caption{Overview of DGMTracker's architecture \protect\cite{Liu2018}}
   \label{fig:mengchen1}
 \end{figure}
 
@@ -446,8 +447,8 @@ Liu et al relied on the latter approach, showing temporal changes in parameters 
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=3in]{mengchen2}
-  \caption{\protect\cite{Mengchen2018}}
+  \includegraphics[width=2.75in]{mengchen2}
+  \caption{Snapshot-level analysis -- each layer is portrayed as a separate area and metrics are shown within its boundaries \protect\cite{Liu2018}}
   \label{fig:mengchen2}
 \end{figure}
 
@@ -459,8 +460,8 @@ These values are mapped to visual representations of the nodes through a color m
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=3in]{mengchen3}
-  \caption{\protect\cite{Mengchen2018}}
+  \includegraphics[width=2.75in]{mengchen3}
+  \caption{Neuron-level analysis -- single node contributions are clustered using K-Means and are then mapped to feature maps to enhance legibility \protect\cite{Liu2018}}
   \label{fig:mengchen3}
 \end{figure}
 
@@ -470,10 +471,40 @@ Snapshot data is visualized using different line charts showing metrics such as 
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics[width=3in]{mengchen4}
-  \caption{\protect\cite{Mengchen2018}}
+  \includegraphics[width=2.75in]{mengchen4}
+  \caption{Training Dynamics -- relevant data is picked from the raw data (left) using blue-noise sampling to preserve outliers (right) as compared to random sampling (middle) \protect\cite{Liu2018}}
   \label{fig:mengchen4}
 \end{figure}
+
+\section{New Papers -- Comparison}
+In this chapter, we are comparing the papers presented in the previous section. 
+The categories are loosely based on the work of Hohman et al who did a comprehensive survey of the state-of-the-art of visual analytics in deep learning \cite{Hohman2018}.
+In their paper, they treat the WHY, WHAT, WHEN, WHO, HOW and WHERE of visual analytics in this area.
+We will focus on the WHAT, HOW and WHEN in this chapter. This means that the papers of this work will be compared and categorized based on what specific data domain of deep learning they are visualizing and what means have been used to visualize that data. Additionally, it is important to understand if this is done during or after training (WHEN).
+
+Hohman et al propose several categories of which we will use the following for our purpose.
+
+\subsection{What Data Is Visualized?}
+Papers in this report can be categorized as follows based on what kind of data they visualize.
+\subsubsection{Computational Graph and Network Architecture}
+\subsubsection{Neural Network Edge Weights}
+\subsubsection{Convolutional Filters}
+\subsubsection{Activations}
+\subsubsection{Error Gradients}
+\subsubsection{Model Metrics}
+
+\subsection{How Is the Data Visualized?}
+Papers in this report can be categorized as follows based on how the data is visualized -- in other words, what kind of techniques are used.
+\subsubsection{Node-Link Diagrams}
+\subsubsection{Dimensionality Reduction and Scatter Plots}
+\subsubsection{Line Charts}
+\subsubsection{Interactive Experimentation}
+\subsubsection{Algorithms for Attribution and Feature Visualization}
+
+\subsection{When Is the Data Visualized?}
+Papers in this report can be categorized as follows based on when the data is visualized. Visualizing the data during training can be a benefit since the expert can intervene as soon as anomalies are detected. However, visualizing data after one or multiple trainings have finished often yields a better general overview of the data \cite{Hohman2018}.
+\subsubsection{During Training (Online)}
+\subsubsection{After Training (Offline)}
 
 \bibliographystyle{acmsiggraph}
 \nocite{*}
