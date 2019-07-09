@@ -421,9 +421,9 @@ In figure \ref{fig:cnnvis_detail} we can see a detailed look at the visual outpu
 
 To summarize, Liu et al.'s application is a good way to visualize deep neural networks. Their clustering techniques allow for a stripped-down exploration of a network, where only necessary components can be viewed. User interaction allows for a flexible alteration to specific user needs. To demonstrate that their approach improves many aspects of CNN trainging, they conducted multiple user studies. Those studies were generally favorable of CNNVis and found it to be helpful for detailed network analysis.
 
-\subsection{Towards Better Analysis of Deep Convolutional Neural Networks}
-
-
+\subsection{GANVizs: A Visual Analytical Approach to Understand the Adverserial Game}
+Wang et al.'s paper describes a novel approach to visualize Generative Adverserial Networks (GANs). GANs, in contrast to the more commonly used CNNs, are used for image data generation, rather than discrimiation. As such, they are used for generating images for DNN training in areas where the datasets used are not sufficient. Further, last year NVIDIA presented a GAN that is able to generate realistic fake portrait photos that are difficult to discrimate against real ones [REF MISSING]. 
+GANs differ from the usual CNN architecture, as they are trained by two adverserial networks. One of those networks, called the Generator (G) generates fake data that is being handed to the Descriminator (D), who tries to identify the fake. During the training-process, G is constantly developing it's ability to produce sufficient good images so as to fool D, whereas D is getting better at discerning images handed by G from real ones mixed in the dataset.
 
 \bibliographystyle{acmsiggraph}
 \nocite{*}
