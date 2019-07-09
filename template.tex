@@ -418,7 +418,7 @@ Since we don't want to focus on every detail of how their process works, we'll o
   \label{fig:cnnvis_detail}
 \end{figure}
 
-In figure \ref{fig:cnnvis_detail} we can see a detailed look at the visual output their program produces. As the input data is passed through the network, more and more features are being learned in axccordance with their previous layers. Left of Fig. \ref{fig:cnnvis_detail}C we can see a representative network layer with some representative neurons. The neurons are chosen by sorting for maximum activation. A pool of five neurons-clusters is picked which can be switched by the user. When clicking on a individual neuron-cluster (Fig. \ref{fig:cnnvis_detail}A), the user can see how certain input images (which themselves are user-swappable) effect the activation of a single cluster (Fig. \ref{fig:cnnvis_detail}B1 and B2). Through that, the features a network has learned can be understood and decisions for retraining can be made. Finally, the biclustering-based edge bundling algorithm allows for decluttering the vast number of inter-neuron connections.\\
+In figure \ref{fig:cnnvis_detail} we can see a detailed look at the visual output their program produces. As the input data is passed through the network, more and more features are being learned in accordance with their previous layers. Left of Fig. \ref{fig:cnnvis_detail}C we can see a representative network layer with some representative neurons. The neurons are chosen by sorting for maximum activation. A pool of five neurons-clusters is picked which can be switched by the user. When clicking on a individual neuron-cluster (Fig. \ref{fig:cnnvis_detail}A), the user can see how certain input images (which themselves are user-swappable) effect the activation of a single cluster (Fig. \ref{fig:cnnvis_detail}B1 and B2). Through that, the features a network has learned can be understood and decisions for retraining can be made. Finally, the biclustering-based edge bundling algorithm allows for decluttering the vast number of inter-neuron connections.\\
 
 To summarize, Liu et al.'s application is a good way to visualize deep neural networks. Their clustering techniques allow for a stripped-down exploration of a network, where only necessary components can be viewed. User interaction allows for a flexible alteration to specific user needs. To demonstrate that their approach improves many aspects of CNN trainging, they conducted multiple user studies. Those studies were generally favorable of CNNVis and found it to be helpful for detailed network analysis.
 
@@ -508,7 +508,17 @@ Papers in this report can be categorized as follows based on how the data is vis
 \subsection{When Is the Data Visualized?}
 Papers in this report can be categorized as follows based on when the data is visualized. Visualizing the data during training can be a benefit since the expert can intervene as soon as anomalies are detected. However, visualizing data after one or multiple trainings have finished often yields a better general overview of the data \cite{Hohman2018}.
 \subsubsection{During Training (Online)}
+The most prominent example in online visualization in machine learning is perhaps TensorFlow's deep learning metrics visualization \cite{Wongsuphasawat2018} as well as the TensorFlow Playground tool, which lets users interact with a simulated training process by means of intuitive visualization \cite{Smilkov2017}.
+Aside from Google's solutions, the work of Liu et al. \cite{Liu2018} provides a tool to analyze deep generative models online. In comparison to the TensorFlow toolchain it offers more options for interactions and refined analysis.
+
+One candidate can placed in both the online and offline category. Li et al.'s loss landscape visualizations offer an analysis of optimal learning path \cite{Li2017}. This feature can also be used to visualize the "route" taken on the loss landscape during training.
+
 \subsubsection{After Training (Offline)}
+This category is dominated by heatmap-like approaches. The works of Samek et al. and Nguyen et al. both present ways of visualizing the networks inner workings by composing images algorithmically \cite{Samek2017,Nguyen2016}. 
+
+Liu et al.'s work on the other hand focuses more on structural visualization \cite{Liu2016}.
+
+Again, Li et al.'s loss landscapes also cater to offline analysis in the sense that they give an idea of the training complexity that is inherent to the network structure \cite{Li2017}.
 
 \bibliographystyle{acmsiggraph}
 \nocite{*}
