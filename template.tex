@@ -164,7 +164,11 @@ Since not every paper about machine learning is also discussing visualization, w
 To choose literature relevant for this STAR we first read through the abstract of every publication on our shortlist. Then, by also reading the conclusion we decided which publications were significant to this work.
 
 \section{Overview of Works}
+This section will give a complete overview of all the work covered in this report. Each paper will be outlined shortly and notable features will be described in more detail. We have categorized works into four big categories -- structure-, feature-, metrics- and loss and error visualizations.
+
 \subsection{Network Structure Visualization}
+Works in this category mainly focus on convaying the structure and architecture of neural networks.
+
 \subsubsection{TensorFlow's Visualization API}
 Because Google is one of the major players in today's machine learning field, this section will address how their platform TensorFlow incorporates visualizations to aid its users in better understanding the underlying metrics and parameters of their deep learning models.
 
@@ -226,7 +230,9 @@ Their tool offers a network diagram of a DNN that is designed to solve classific
 
 Smilkov et al.'s playground offers people, as for example students, an easy way to experiment with a network without any prior coding experience. While the mathematics behind deep learning can sometimes feel overwhelming for newcomers, their website offers a much more straight-forward approach to visualization of complex functions. According to their paper, TensorFlow Playground has gained positive reactions on the internet, although no statistical evidence was offered to support their claim.
 
-\subsection{Network Activation Visualization}
+\subsection{Network Feature Visualization}
+Works in this category focus mainly on visualizing detected features and relevancy mappings.
+
 \subsubsection{Multi-Neuron Activations}
 Another way to interpret visualization of DNNs, is to give a visual representation of the layers a network uses for its decision making.\\ 
 In their paper, Yosinski et al. describe tools they developed, that enable the user to see what each neuron "sees", or expects to see, thereby making it easier to understand what a network actually interprets on the level of single neurons \cite{Yosinski2015}.
@@ -305,6 +311,10 @@ Simplifying the approach for the sake of this state-of-the-art report, their alg
 An example for such a facet cluster can be seen in Figure \ref{fig:facet_cluster}.
 
 
+\subsection{Network Metrics Visualization}
+Works in this category focus mainly on visualizing neural network metrics such as loss or activations in a layer.
+%% TODO: New content goes here Liu2016, Liu2018, Wang
+
 \subsection{Network Error and Loss Visualization}
 In some cases it is more desirable to explore neural networks in terms of training data and loss rather than looking at an already trained model.
 The inherent difficulty when choosing a particular network architecture is knowing how hard it will be with given training data to reach a global minimum in the error function and therefore reach optimal network performance.
@@ -345,8 +355,8 @@ To address the issue of scale invariance, Li et al. proposed a method called Fil
 This new method allows the creation of plots that are comparable among each other.
 
 \section{Summary and Discussion}
-In the results section of this report it could be seen that there are three main categories of visualizations of neural networks. A neuronal network can be visualized on a meta level by representing the structure of its nodes and high level constructs in the form of graphs. Compared to that, the direct input, output and everything that happens in between can also be visualized to give the user a better understanding of the actual inner workings of a network. In addition, the underlying loss function also lends itself to visualization as it provides insights about the feedback behavior of the network.\\
-In this section, we will discuss the pros and cons of each approach.\\
+In the overview section of this report it could be seen that there are four main categories of visualizations of neural networks. A neuronal network can be visualized on a meta level by representing the structure of its nodes and high level constructs in the form of graphs. Compared to that, the direct input, output and everything that happens in between can also be visualized to give the user a better understanding of the actual inner workings of a network. Another way is to visualize metrics data. In addition, the underlying loss function also lends itself to visualization as it provides insights about the feedback behavior of the network.\\
+In this section, we will discuss summarize these approaches.\\
 
 \subsection{Network Structure Visualization}
 
@@ -354,11 +364,23 @@ We have looked at the way Google's TensorFlow utilizes algorithms on directed gr
 
 As seen in the work of Smilkov et al., there is a great need for visualizing the so-called \textit{black box} that neural networks can sometimes seem to be \cite{Smilkov2017}. Therefore, we discussed their method of visualizing networks for teaching and learning, TensorFlow Playground.
 
-\subsection{Network Activation Visualization}
+\subsection{Network Feature Visualization}
 
 Yosinski et al. offer an open source project that aims to show the visual input and interpretation from every layer to every neuron of a DNN \cite{Yosinski2015}. They therefore offer a very interesting insight into how a neuronal network actually generates an output and therefore classifies an image.
 
 With their work on heatmaps, Samek et al. have shown, as Yosinski et al., that the knowledge about the workings of individual components can be quite insightful for engineers of a DNN. They proposed different ways of representing the decision-making-process of a neural network as heatmaps \cite{Samek2017}. We have seen, that there were clear advantages with some approaches, such as LRP, where even negative evidence against a decision can be shown. It seems clear that the usage of discussed techniques would be greatly beneficiary for people working on optimizing the performance of specific neural networks.
+
+Nguyen et al. build upon previous work by Erhan et al. to offer deeper insight into the behavior of single neurons \cite{Nguyen2016,Erhan2009}. In their paper on Multifaceted Feature Visualization they show methods to construct artificial images based on neuron activation data \cite{Nguyen2016}. These images aim to maximize the activation of certain neurons.
+
+\subsection{Network Metrics Visualization}
+%% Liu2016 Towards Better DNN Visualization
+Liu et al. propose a method to visualize deep convolutional neural networks using a simple graph layout \cite{Liu2016}. This layout represents single neurons as nodes and shows connections between the layers via edges. Contributions of each neuron are color-coded.
+
+%% Liu2018 DGMTracker
+DGMTracker is an analytical tool that provides detailed insights into the training process of generative deep neural networks \cite{Liu2018}. Notable features are the node credit visualization, blue-noise sampling and the data flow visualization at snapshot level.
+
+%% Wang GAN Analysis
+For analysis of generative adversarial networks, Wang et al. propose GANViz \cite{Wang}. It is a tool that several different views for detailed exploration of the training process of these generative models. Most notable are the distribution view, which gives an overview of real and fake images at the current state of the network and the tensor path view, which highlights important activations \cite{Wang}.
 
 \subsection{Network Error and Loss Visualization}
 
@@ -421,8 +443,6 @@ Since we don't want to focus on every detail of how their process works, we'll o
 In figure \ref{fig:cnnvis_detail} we can see a detailed look at the visual output their program produces. As the input data is passed through the network, more and more features are being learned in accordance with their previous layers. Left of Fig. \ref{fig:cnnvis_detail}C we can see a representative network layer with some representative neurons. The neurons are chosen by sorting for maximum activation. A pool of five neurons-clusters is picked which can be switched by the user. When clicking on a individual neuron-cluster (Fig. \ref{fig:cnnvis_detail}A), the user can see how certain input images (which themselves are user-swappable) effect the activation of a single cluster (Fig. \ref{fig:cnnvis_detail}B1 and B2). Through that, the features a network has learned can be understood and decisions for retraining can be made. Finally, the biclustering-based edge bundling algorithm allows for decluttering the vast number of inter-neuron connections.\\
 
 To summarize, Liu et al.'s application is a good way to visualize deep neural networks. Their clustering techniques allow for a stripped-down exploration of a network, where only necessary components can be viewed. User interaction allows for a flexible alteration to specific user needs. To demonstrate that their approach improves many aspects of CNN trainging, they conducted multiple user studies. Those studies were generally favorable of CNNVis and found it to be helpful for detailed network analysis.
-
-\subsection{Towards Better Analysis of Deep Convolutional Neural Networks}
 
 \subsection{Analyzing the Training Processes of Deep Generative Models}
 In their paper, Liu et al. developed the tool DGMTracker, which allows experts to analyze deep generative models -- the most popular version being the generative adversarial network (GAN) -- at different granularities \cite{Liu2018}. 
@@ -510,7 +530,7 @@ As seen in Figure \ref{fig:ganviz}a and b, most of those parameters are plotted 
 
 GANViz was evaluated in a case study and by assessing experts' feedback.
 
-\section{New Papers -- Comparison}
+\section{Comparison}
 In this chapter, we are comparing the papers presented in the previous section. 
 The categories are loosely based on the work of Hohman et al. who did a comprehensive survey of the state-of-the-art of visual analytics in deep learning \cite{Hohman2018}.
 In their paper, they treat the WHY, WHAT, WHEN, WHO, HOW and WHERE of visual analytics in this area.
