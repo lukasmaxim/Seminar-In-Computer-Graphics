@@ -476,9 +476,39 @@ Snapshot data is visualized using different line charts showing metrics such as 
   \label{fig:mengchen4}
 \end{figure}
 
-\subsection{GANVizs: A Visual Analytical Approach to Understand the Adverserial Game}
-Wang et al.'s paper describes a novel approach to visualize Generative Adverserial Networks (GANs). GANs, in contrast to the more commonly used CNNs, are used for image data generation, rather than discrimiation. As such, they are used for generating images for DNN training in areas where the datasets used are not sufficient. Further, last year NVIDIA presented a GAN that is able to generate realistic fake portrait photos that are difficult to discrimate against real ones [REF MISSING]. 
-GANs differ from the usual CNN architecture, as they are trained by two adverserial networks. One of those networks, called the Generator (G) generates fake data that is being handed to the Descriminator (D), who tries to identify the fake. During the training-process, G is constantly developing it's ability to produce sufficient good images so as to fool D, whereas D is getting better at discerning images handed by G from real ones mixed in the dataset.
+\subsection{GANViz: A Visual Analytical Approach to Understand the Adverserial Game}
+Wang et al.'s paper describes a novel approach to visualize Generative Adverserial Networks (GANs) \protect\cite{Wang}. GANs, in contrast to the more commonly used CNNs, are used for image data generation, rather than discrimiation. As such, they are used for generating images for DNN training in areas where the datasets used are not sufficient. Further, last year NVIDIA presented a GAN that is able to generate realistic fake portrait photos that are difficult to discrimate against real ones \protect\cite{KarrasNVIDIA}. 
+GANs differ from the usual CNN architecture, as they are trained by two adverserial networks. One of those networks, called the Generator (G) generates fake data that is being handed to the Descriminator (D), who tries to identify the fake. During the training-process, G is constantly developing it's ability to produce sufficient good images so as to fool D, whereas D is getting better at discerning images handed by G from the real ones mixed in the dataset.\\
+
+In order to improve working with GANs, Wang et al. have consulted with experts on what their solution, GANViz is required to incorporate. To aid those experts, the main focus of GANViz are as follows.
+
+\begin{itemize}
+  \item The support for model evaluation while training
+  \item Visualization of model interpretation
+  \item Comparative visualization with focus on the difference between false-positive and true-positive images (e.g. images of apples vs. oranges)
+  \item Comparative visualization with focus on tracking training data during training process
+\end{itemize}
+
+\subsubsection{Approach}
+To achieve the goals described, we will give an overview on how GANViz works. GANViz is used to visualize deep convolutional GANs (DCGANs), which feature, as an extension of GANs, a deep deconvolutional network as G, and a deep convolutional binary classifier as D. For visualization, a multitude of parameters are being measured during training. The most important parameters for examining the training progress are as follows.
+
+\begin{itemize}
+  \item The loss function of G and D, which indicates the quality of a model as it measures the prediction error of a model;
+  \item The probability values of D's discrimination with regards to the prediction of real vs. fake images;
+  \item The activations from all layers for each image when being passed through D;
+  \item The area under curve (AUC) which plots the true-positive rate against the false-positive rate;
+\end{itemize}
+
+\begin{figure*}
+  \centering
+  \includegraphics[width=\textwidth]{ganviz}
+  \caption{\protect\cite{Wang}}
+  \label{fig:ganviz}
+\end{figure*}
+
+As seen in Figure \ref{fig:ganviz}a and b, most of those parameters are plotted as charts. The distribution-view in Figure \ref{fig:ganviz}c is used for representing the performance of G, by showing the feature probability distribution of real vs. fake images. Here, after applying dimensionality reduction, generated and real images are plotted in a 2D graph, indicating what images tricked D by encoding the prediction probability with a color gradient. A lasso tool is implemented to give users the ability to examine specific images in detail. The TensorPath view seen in Figure \ref{fig:ganviz}d provides an overview of D's network architecture, where the activation of certain layers can be viewed individually. Further, as seen in Figure \ref{fig:ganviz}e, those activations can be compared in between layers and over multiple timestamps. This activation comparison view is linked with the TensorPath view, allowing for the user to actively compare the activations of multiple images.
+
+GANViz was evaluated in a case study and by assessing experts' feedback.
 
 \section{New Papers -- Comparison}
 In this chapter, we are comparing the papers presented in the previous section. 
