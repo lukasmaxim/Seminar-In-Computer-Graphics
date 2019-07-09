@@ -91,6 +91,9 @@ This state-of-the-art report gives a rough overview of the wide variety of appro
 \keywordlist
 
 \section{Introduction}
+Recent years have seen a surge in the application of machine learning - especially deep learning. This is due to the fact that deep learning has seen substantial improvements over the last decades, ranging from improved algorithms \cite{LeCun1998} over the availability of big datasets such as ImageNet \cite{Deng2009} or Sports1M \cite{Karpathy} to performance improvements of modern-day GPUs coupled with flexible, and free-to-use frameworks such as TensorFlow \cite{Abadi2016} or Caffee \cite{Jia2014}.
+
+With AI's successful application across all kinds of different tasks from detecting objects in images \cite{He2015}, to natural language processing \cite{Cho}, comes increased complexity in network architecture and structure. Today's networks contain millions of individual neurons which are hard to interpret individually. Further, since AI is being used in critical decision-making processes and EU regulations regards explanations of machine learning based decisions as a human right since 2016 \cite{Choo2018}, visualization can be a good tool to shed light on the "black box" a neural network is sometimes referred to. \cite{Shwartz-Ziv2017}
 
 %% The ``\copyrightspace'' command must be the first command after the 
 %% start of the first section of the body of your paper. It ensures the
@@ -99,34 +102,46 @@ This state-of-the-art report gives a rough overview of the wide variety of appro
 
 \copyrightspace
 
-\subsection{Background and Motivation}
-As the both of us work in the field of medical informatics where we currently develop neural networks for bone assessment, we oftentimes wonder what actually happens inside the networks we train and evaluate. Since, as of now, there does not appear to be lots of focus on neural visualization (at least in our working field), we thought it to be interesting, not only to us, but for everybody involved in working in machine learing on what current approaches to visualization might be.
+\subsection{Motivation}
+As we have seen, machine learning and especially deep learning have become increasingly popular over the past years and are now being applied in a wide variety of fields. Due to the size of the input data that is necessary for training, or due to the vast number of neurons most networks consist of, we see there is growing demand for conveying lots of information in a comprehensible way. We think that visualization might be the key to tackle this challenge.
 
-\subsection{The Problem}
-Data, especially large collections of analytical data in various fields of science, can pose enormous challenges for the people involved in analysing these data. Datasets often succeed the limits of intuitive comprehensibility.\\
-One approach, that is frequently used to surmount these large amounts of data are computer aided visualizations. They are a powerful tool to categorize, classify, analyse and visually process data to make it more understandable. For instance, when looking at data in tabular form, it is typically harder to grasp its meaning as opposed to looking at the same data processed as a graph or bar chart.
+\subsection{Visualization as a Possible Solution}
+Data, especially large collections of analytical data in various fields of science, can pose enormous challenges for the people involved in analysing these data. Datasets often succeed the limits of intuitive comprehensibility (e.g. ImageNet \cite{Deng2009}).
 
-The problem we will be discussing in this paper is the usage of visualization techniques for processing data, that comes from neural networks. Aside from solely working on the visualization on a layer-level (which will still be the main focus of this work), we also want to give readers a more meta-level picture visualizing neural networks as a whole.
+One approach that is frequently used to surmount these large amounts of data are visualizations. They are a powerful tool to categorize, classify, analyse and visually process data to make it more understandable. For instance, when looking at data in tabular form, it is typically harder to grasp its meaning as opposed to looking at the same data processed as a graph or bar chart.
+
+The problem we will be discussing in this paper is the usage of visualization techniques for processing data that comes from neural networks. These include approaches form visualizing networks as a whole, over showing a graphic representation on a neuron level to meta-level approaches, where information about network parameters is shown on a meta-level.
 
 \subsection{Our Contribution}
-As we soon saw, this is a rather niche problem to which good literature is scarce. We contribute to the stated problem by giving a comprehensive overview on the matter and explaining different ways in which aspects of neural networks can be visualized.
+With this work we aim at educating the reader on current problems in the field of machine learning with special focus on deep learning and on state-of-the-art visualizations that are currently being applied to aid experts, as well as untrained users. We will explore how every method works individually and give a comparative overview across approaches and concepts.
 
-Following this introduction, we will explain how we came to find the literature we are reviewing and see which results we obtained from our work. Furthermore there will be a discussion as to how to interpret our findings and how visualization techniques could be employed in the field of future neural network visualization.
+\section{Neural Network Basics}
+In this section we will provide a short introduction on the basic ideas of machine learning with special focus on deep learning.
 
-\section{Terms and Definitions}
-In this section we will define the two most important concepts used in this work.
+\subsubsection{Neuron}
+A neuron with regards to machine learning is regarded as one basic computational unit that applies linar transformation to its previous inputs.
 
-\subsection{Machine Learning (Li2017ML)}
+\subsubsection{Layer}
+A layer represents a cluster of multiple neurons that perform the same computation with different parameters. Layers typically take on a specific function. CNNs, for example, usually feature alternating convolutional and max-pooling layers. 
+
+\subsubsection{Activation}
+Activation in machine learning is occuring when the input value of a neuron reaches past its threshold. This threshold is determined by the activation function. When analyzing images, a high activation directly correlates to a certain image feature being detected by a neuron.
+
+\subsubsection{Machine Learning}
 Traditionally, computers where designed to be programmed with specific instructions, which had been executed in an orderly fashion.
-Machine learning changes these paradigms drastically. The core principal of machine learning is that computers are shown data which they are then to interpret. Through adequate ground truth data and error functions, the computer is given feedback about its performance and can therefore adjust. After a varying amount of time, the trained computer will have adapted to the underlying structure of the data enough, so that it can make educated predictions about previously unseen input. What these procedures are programmed to do is to approximate a pre-defined goal. This concept is best portrayed by an example:\\
+Machine learning changes these paradigms drastically. The core principal of machine learning is that computers are shown data which they are then to interpret. Through adequate ground truth data and error functions, the computer is given feedback about its performance and can therefore adjust. After a varying amount of time, the trained computer will have adapted to the underlying structure of the data enough, so that it can make educated predictions about previously unseen input. What these procedures are programmed to do is to approximate a pre-defined goal. This concept is best portrayed by an example:
+
 Assuming the goal is to identify handwritten numbers, the machine learning algorithm is provided with the raw image of the written symbol. At first, it will guess at random which number was represented by the drawing. 
 After each guess, it receives the correct answer. It then adjusts its parameters to fit the desired outcome.
 This process is repeated many times with different symbols until the parameters are adjusted so precisely that the algorithm -- which is called a "model" in the machine learning domain -- can detect any arbitrary handwritten number.\\
+
 The example above is fairly simple but this process works for any task designed to identify or classify data, given enough raw input material. One maybe more significant application, is to classify histological images in terms of cancerous cell expression, which could lead to early diagnosis of tumors.
 
-\subsection{Deep Neural Network (DNN)}
+\subsubsection{Deep Neural Network (DNN)}
 A deep neural network is a network of linked computational nodes, aiming to mimic the way our brain works. Each node has input and output channels and a function \textit{F} to determine output from input. Neural networks are a sub-category of machine learning that build upon its basic concepts. Only in recent years it has become possible to use vast DNNs due to the increased performance of modern-day GPUs. Since those networks can house millions of parameters and with deep learning being applied in nearly every area of today's problem-solving, the need for visualzations in this area is steadily increasing. Therefore, DNNs are sometimes regarded as \textit{black-bloxes} with no clear insight into their decision-making process.
 
+\subsubsection{Convolutional Neural Network (CNN)}
+A CNN is a subcategory of a DNN. The name comes from its convolutional layers which are smaller representations of the original image matrix that have been transformed by a kernel moving over the image. The convolution step is then followed by a pooling step that further reduces image size. This, in the case of max-pooling, is achieved by only using the maximum value in a certain neighborhood, which is also responsible for noise reduction.
 
 \section{Method}
 While machine learning has been applied to lots of problems in the past, recent years have seen an unprecedented rise in the application of neural networks for problem solving, especially with the ongoing hype of deep learning. Due to this rise, visualization approaches have lacked behind, rendering machine learning to be this oftentimes so-called \textit{black box}. Hence, publications that are older than a few years may not portray the current landscape of machine learning visualizations corretly. This is why in this state-of-the-art report, we aimed to find the most recent papers on the topic and also tried to include approaches from Google, arguably one of the most important players in today's machine learning field.
@@ -203,9 +218,12 @@ After this pre-processing phase, a series of graph transformations is applied to
 \label{fig:transformations}
 \end{figure}
 
-First, non-critical operations are de-emphasized by extracting them from the layout and depicting them as either small circles or bar chart icons, depending on their role. The paper states, that those operations account for approximately 30\% of a typical network.\\
-In the second phase, edges are bundled and a clustered graph is formed. Here, edges only connect nodes that are siblings in the hierarchy. This ensures that on interaction only subgraphs need to be refreshed, saving resources and improving responsiveness. Rounded rectangles represent group nodes, that are grouped by unique namespaces, such as "train".\\
-As in the first step, in the third stage, non-critical nodes are extracted from each subgraph, rather than from the graph as a whole. Extracted nodes are thereby placed on the right side, as shown in Figure \ref{fig:transformations}-d. Connecting nodes are also represented and give additional information, when hovered over. A set of heuristics is used to determine non-critical nodes, including searching for declaring and initializing variables.\\\\
+First, non-critical operations are de-emphasized by extracting them from the layout and depicting them as either small circles or bar chart icons, depending on their role. The paper states, that those operations account for approximately 30\% of a typical network.
+
+In the second phase, edges are bundled and a clustered graph is formed. Here, edges only connect nodes that are siblings in the hierarchy. This ensures that on interaction only subgraphs need to be refreshed, saving resources and improving responsiveness. Rounded rectangles represent group nodes, that are grouped by unique namespaces, such as "train".
+
+As in the first step, in the third stage, non-critical nodes are extracted from each subgraph, rather than from the graph as a whole. Extracted nodes are thereby placed on the right side, as shown in Figure \ref{fig:transformations}-d. Connecting nodes are also represented and give additional information, when hovered over. A set of heuristics is used to determine non-critical nodes, including searching for declaring and initializing variables.
+
 As can be seen in Figure \ref{fig:transformations}, this process declutters the graph by a high degree. Since Wongsuphasawat et al. use heuristics in some cases, unwanted results can be overruled by the user afterwards.
 
 \paragraphbr{Feedback}
@@ -214,7 +232,8 @@ Wongsuphasawat et al. gathered internal and external feedback regarding this vis
 
 \subsubsection{TensorFlow Playground}
 
-In their paper, Smilkov et al. describe how Google's TensorFlow Playground aims at giving non-experts a quick and easy way into deep learning. Since the inner workings can sometimes become hard to read and interpret, the goal was to offer an interactive demo of an already trained deep neuronal network. TensorFlow Playground is an open-source in-browser tool that wants to give "novices with mathematical and practical intuition" \cite[p.~1]{Smilkov2017} a shortcut to understanding the basics of machine learning.\\
+In their paper, Smilkov et al. describe how Google's TensorFlow Playground aims at giving non-experts a quick and easy way into deep learning. Since the inner workings can sometimes become hard to read and interpret, the goal was to offer an interactive demo of an already trained deep neuronal network. TensorFlow Playground is an open-source in-browser tool that wants to give "novices with mathematical and practical intuition" \cite[p.~1]{Smilkov2017} a shortcut to understanding the basics of machine learning.
+
 Their tool offers a network diagram of a DNN that is designed to solve classification or regression problems. As we can see in Figure \ref{fig:tensorflow_playground}, a circular shape with blue and orange dots can be used as training data. Two abstract features, x\textsubscript{1} and x\textsubscript{2} are then used to generate the gradient that can be seen in the neurons. In this way, users are able to see the different stages of data discrimination within the structure of a neural network. The combination of all neurons is then used to generate a heatmap on the right site that represents the output of the network. With more iterations and therefore more training, one can see, that the blue dots are separated better from the orange ones over time, giving a visual representation of the mathematics underlying the network.
 
 \begin{figure*}
