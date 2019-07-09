@@ -333,6 +333,130 @@ An example of such a facet cluster can be seen in Figure \ref{fig:facet_cluster}
 \subsection{Network Metrics Visualization}
 Works in this category focus mainly on visualizing neural network metrics such as loss or activations in a layer.
 %% TODO: New content goes here Liu2016, Liu2018, Wang
+\subsection{Towards Better Analysis of Deep Convolutional Neural Networks}
+In their paper, Liu et al. introduce a  visualization approach for visualizing deep convolutional neural networks (CNNs) \cite{Liu2016}. CNNs present a major challenge for scientists and experts working with them for a number of reasons as detailed in their work. First, neural networks can consist of hundreds of individual layers that themselves are made up of thousands of neurons. This inherent problem makes analysis on a neuron-level difficult. Secondly, training CNN is a time-intensive task, where training can last for hours, days, or even weeks. Therefore, the correct identification of potential problems is key to saving time and resources.\\
+
+\begin{figure}
+  \centering
+  \includegraphics[width=2.75in]{cnnvis}
+  \caption{Sample image of CNNVis. \protect\cite{Liu2016}}
+  \label{fig:cnnvis}
+\end{figure}
+
+With their approach, CNNVis (\ref{fig:cnnvis}), Liu et al. try to tackle those challenges in order to give experts a tool for easy visual analysis of their networks. Their text describes how CNNVis works and evaluates it in three user-studies where they measure performance improvements across multiple neural networks.\\
+
+\subsubsection{Approach}
+CNNVis uses a number of different steps to achieve a comprehensible CNN visualization. Those include the following.
+
+\begin{itemize}
+  \item The network is converted into a directed acyclic graph (DAG)
+  \item Layers are clustered
+  \item Representative layers are chosen
+  \item Neurons of those layers are clustered
+  \item Representative neurons are chosen
+  \item A hierarchical rectangle packing algorithm is applied
+  \item A matrix reordering algorithm helps with visualizing activations
+  \item A biclustering-based edge bundling method is applied
+\end{itemize}
+
+Since we don't want to focus on every detail of how their process works, we'll outlay some of the steps listed above.\\
+
+\begin{figure}
+  \centering
+  \includegraphics[width=2.75in]{cnnvis_detail}
+  \caption{Sample image of CNNVis. \protect\cite{Liu2016}}
+  \label{fig:cnnvis_detail}
+\end{figure}
+
+In figure \ref{fig:cnnvis_detail} we can see a detailed look at the visual output their program produces. As the input data is passed through the network, more and more features are being learned in accordance with their previous layers. Left of Fig. \ref{fig:cnnvis_detail}C we can see a representative network layer with some representative neurons. The neurons are chosen by sorting for maximum activation. A pool of five neurons-clusters is picked which can be switched by the user. When clicking on an individual neuron-cluster (Fig. \ref{fig:cnnvis_detail}A), the user can see how certain input images (which themselves are user-swappable) effect the activation of a single cluster (Fig. \ref{fig:cnnvis_detail}B1 and B2). Through that, the features a network has learned can be understood and decisions for retraining can be made. Finally, the biclustering-based edge bundling algorithm allows for decluttering the vast number of inter-neuron connections.\\
+
+To summarize, Liu et al.'s application is a good way to visualize deep neural networks. Their clustering techniques allow for a stripped-down exploration of a network, where only necessary components can be viewed. User interaction allows for a flexible alteration to specific user needs. To demonstrate that their approach improves many aspects of CNN training, they conducted multiple user studies. Those studies were generally favorable of CNNVis and found it to be helpful for detailed network analysis.
+
+\subsection{Analyzing the Training Processes of Deep Generative Models}
+In their paper, Liu et al. developed the tool DGMTracker, which allows experts to analyze deep generative models -- the most popular version being the generative adversarial network (GAN) -- at different granularities \cite{Liu2018}. 
+DGMTracker offers the following three modules. Snapshot-, layer- and neuron-level analysis.
+To achieve this, DGMTracker is divided into two modules. Data flow visualization and Training dynamics analysis.
+Data flow visualization focuses on the general flow of input data towards the output layer. Experts can analyze hotspots and bottlenecks using this flow data. DGMTracker offers snapshot- and neuron-level analysis of data flow data.
+Training dynamics are a collection of multiple parameters of interest to the expert. These include loss and average weight per layer. Those data are visualized in the Training dynamics analysis module of DGMTracker.
+Using these modules the expert can then perform analysis on different levels of detail in different modalities.
+An overview if DGMTracker's architecture can be seen in Figure \ref{fig:mengchen1}.
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=2.75in]{mengchen1}
+  \caption{Overview of DGMTracker's architecture \protect\cite{Liu2018}}
+  \label{fig:mengchen1}
+\end{figure}
+
+\subsubsection{Snapshot-Level Analysis}
+Network states can be captured at different points in time during training resulting in a time series of snapshot data.
+This data is usually visualized either by using dimensionality reduction methods such as t-SNE or by employing multiple line charts. 
+Liu et al. relied on the latter approach, showing temporal changes in parameters such as loss or average weight in a layer (see Figure \ref{fig:mengchen2})
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=2.75in]{mengchen2}
+  \caption{Snapshot-level analysis -- each layer is portrayed as a separate area and metrics are shown within its boundaries \protect\cite{Liu2018}}
+  \label{fig:mengchen2}
+\end{figure}
+
+These data cumulatively represent the overall training dynamics of a network.
+
+\subsection{GANViz: A Visual Analytical Approach to Understand the Adversarial Game}
+Wang et al.'s paper describes a novel approach to visualize Generative Adversarial Networks (GANs) \protect\cite{Wang}. GANs, in contrast to the more commonly used CNNs, is used for image data generation, rather than discrimination. As such, they are used for generating images for DNN training in areas where the datasets used are not sufficient. Further, last year NVIDIA presented a GAN that is able to generate realistic fake portrait photos that are difficult to discriminate against real ones \protect\cite{KarrasNVIDIA}. 
+GANs differ from the usual CNN architecture, as they are trained by two adversarial networks. One of those networks called the Generator (G) generates fake data that is being handed to the Discriminator (D), who tries to identify the fake. During the training-process, G is constantly developing its ability to produce sufficient good images so as to fool D, whereas D is getting better at discerning images handed by G from the real ones mixed in the dataset.\\
+
+In order to improve working with GANs, Wang et al. have consulted with experts on what their solution, GANViz is required to incorporate. To aid those experts, the main focus areas of GANViz are as follows.
+
+\begin{itemize}
+  \item The support for model evaluation while training
+  \item Visualization of model interpretation
+  \item Comparative visualization with a focus on the difference between false-positive and true-positive images (e.g. images of apples vs. oranges)
+  \item Comparative visualization with a focus on tracking training data during the training process
+\end{itemize}
+
+\subsubsection{Approach}
+To achieve the goals described, we will give an overview of how GANViz works. GANViz is used to visualize deep convolutional GANs (DCGANs), which feature, as an extension of GANs, a deep deconvolutional network as G, and a deep convolutional binary classifier as D. For visualization, a multitude of parameters are being measured during training. The most important parameters for examining the training progress are as follows.
+
+\begin{itemize}
+  \item The loss function of G and D, which indicates the quality of a model as it measures the prediction error of a model;
+  \item The probability values of D's discrimination with regards to the prediction of real vs. fake images;
+  \item The activations from all layers for each image when being passed through D;
+  \item The area under the curve (AUC) which plots the true-positive rate against the false-positive rate;
+\end{itemize}
+
+\begin{figure*}
+  \centering
+  \includegraphics[width=\textwidth]{ganviz}
+  \caption{\protect\cite{Wang}}
+  \label{fig:ganviz}
+\end{figure*}
+
+As seen in Figure \ref{fig:ganviz}a and b, most of those parameters are plotted as charts. The distribution-view in Figure \ref{fig:ganviz}c is used for representing the performance of G, by showing the feature probability distribution of real vs. fake images. Here, after applying dimensionality reduction, generated and real images are plotted in a 2D graph, indicating what images tricked D by encoding the prediction probability with a color gradient. A lasso tool is implemented to give users the ability to examine specific images in detail. The TensorPath view seen in Figure \ref{fig:ganviz}d provides an overview of D's network architecture, where the activation of certain layers can be viewed individually. Further, as seen in Figure \ref{fig:ganviz}e, those activations can be compared between layers and over multiple timestamps. This activation comparison view is linked with the TensorPath view, allowing for the user to actively compare the activations of multiple images.
+
+GANViz was evaluated in a case study and by assessing experts' feedback.
+
+\subsubsection{Neuron-level Analysis}
+On this level, the expert can see how each neuron of one layer contributes to the input of the following layer. The contribution is assessed by using a credit assignment formula which maps each node's influence to a scale of minus one to one (where negative values mean backward contribution and positive ones denote forward contribution).
+These values are mapped to visual representations of the nodes through a color map. Connections between nodes follow the same scheme. Their thickness additionally shows the magnitude of contribution to individual connections. Since there are usually too many nodes in each layer to visualize them all separately, Liu et al. have used K-Means clustering to reduce visual clutter. Neurons are then placed on a feature map to further reduce complexity (see Figure \ref{fig:mengchen3}).
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=2.75in]{mengchen3}
+  \caption{Neuron-level analysis -- single node contributions are clustered using K-Means and are then mapped to feature maps to enhance legibility \protect\cite{Liu2018}}
+  \label{fig:mengchen3}
+\end{figure}
+
+\subsubsection{Training Dynamics Visualization}
+This second module of DGMTracker was designed to enable experts to analyze training processes on a temporal level.
+Snapshot data is visualized using different line charts showing metrics such as loss and layer activation over time. Again, visualizing all the data directly will usually lead to visual clutter. In this case, Liu et al. propose blue-noise sampling to extract a representative overview of the raw data (see Figure \ref{fig:mengchen4}). The advantage of blue-noise sampling over the conventional random sampling of snapshot data is that the former preserves outliers. This is especially important if the expert is to find layers and neurons that may cause training failure.
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width=2.75in]{mengchen4}
+  \caption{Training Dynamics -- relevant data is picked from the raw data (left) using blue-noise sampling to preserve outliers (right) as compared to random sampling (middle) \protect\cite{Liu2018}}
+  \label{fig:mengchen4}
+\end{figure}
 
 \subsection{Network Error and Loss Visualization}
 In some cases, it is more desirable to explore neural networks in terms of training data and loss rather than looking at an already trained model.
@@ -420,134 +544,6 @@ The aim of this paper was to give a comprehensive overview of the current state-
 The discussed papers provided an interesting look at the current state-of-the-art in the visualization of deep learning models. In general, we can discern that visualization in machine learning is seen as a tool to make DNNs more accessible and easier to modify. Whether on a meta-level or down to the visualization of a single neuron, the approaches discussed above all focus on making neural networks more understandable and more user-friendly. Since the wide applications of machine learning are just at the beginning of being fully understood and utilized, visualization will most probably play a major role in the development of DNNs in the future, especially because, with increased computational power, neuronal networks will grow even more complex.\\
 
 The visualization of neural networks is important and will become more relevant in the future, as machines and networks advance over time. There is still a lot of potentials but promising approaches are already emerging and there is quite a lot of research in the field. Significant global companies like Google or Facebook are also interested in pushing this aspect of neural networks. Further, we want to highlight, that a lot of the projects regarding visualization in this field are open source and easily accessible for anybody interested in getting started with deep learning. 
-
-\newpage
-
-\section{New Papers - Overview}
-\subsection{Towards Better Analysis of Deep Convolutional Neural Networks}
-In their paper, Liu et al. introduce a  visualization approach for visualizing deep convolutional neural networks (CNNs) \cite{Liu2016}. CNNs present a major challenge for scientists and experts working with them for a number of reasons as detailed in their work. First, neural networks can consist of hundreds of individual layers that themselves are made up of thousands of neurons. This inherent problem makes analysis on a neuron-level difficult. Secondly, training CNN is a time-intensive task, where training can last for hours, days, or even weeks. Therefore, the correct identification of potential problems is key to saving time and resources.\\
-
-\begin{figure}
-  \centering
-  \includegraphics[width=2.75in]{cnnvis}
-  \caption{Sample image of CNNVis. \protect\cite{Liu2016}}
-  \label{fig:cnnvis}
-\end{figure}
-
-With their approach, CNNVis (\ref{fig:cnnvis}), Liu et al. try to tackle those challenges in order to give experts a tool for easy visual analysis of their networks. Their text describes how CNNVis works and evaluates it in three user-studies where they measure performance improvements across multiple neural networks.\\
-
-\subsubsection{Approach}
-CNNVis uses a number of different steps to achieve a comprehensible CNN visualization. Those include the following.
-
-\begin{itemize}
-  \item The network is converted into a directed acyclic graph (DAG)
-  \item Layers are clustered
-  \item Representative layers are chosen
-  \item Neurons of those layers are clustered
-  \item Representative neurons are chosen
-  \item A hierarchical rectangle packing algorithm is applied
-  \item A matrix reordering algorithm helps with visualizing activations
-  \item A biclustering-based edge bundling method is applied
-\end{itemize}
-
-Since we don't want to focus on every detail of how their process works, we'll outlay some of the steps listed above.\\
-
-\begin{figure}
-  \centering
-  \includegraphics[width=2.75in]{cnnvis_detail}
-  \caption{Sample image of CNNVis. \protect\cite{Liu2016}}
-  \label{fig:cnnvis_detail}
-\end{figure}
-
-In figure \ref{fig:cnnvis_detail} we can see a detailed look at the visual output their program produces. As the input data is passed through the network, more and more features are being learned in accordance with their previous layers. Left of Fig. \ref{fig:cnnvis_detail}C we can see a representative network layer with some representative neurons. The neurons are chosen by sorting for maximum activation. A pool of five neurons-clusters is picked which can be switched by the user. When clicking on an individual neuron-cluster (Fig. \ref{fig:cnnvis_detail}A), the user can see how certain input images (which themselves are user-swappable) effect the activation of a single cluster (Fig. \ref{fig:cnnvis_detail}B1 and B2). Through that, the features a network has learned can be understood and decisions for retraining can be made. Finally, the biclustering-based edge bundling algorithm allows for decluttering the vast number of inter-neuron connections.\\
-
-To summarize, Liu et al.'s application is a good way to visualize deep neural networks. Their clustering techniques allow for a stripped-down exploration of a network, where only necessary components can be viewed. User interaction allows for a flexible alteration to specific user needs. To demonstrate that their approach improves many aspects of CNN training, they conducted multiple user studies. Those studies were generally favorable of CNNVis and found it to be helpful for detailed network analysis.
-
-\subsection{Analyzing the Training Processes of Deep Generative Models}
-In their paper, Liu et al. developed the tool DGMTracker, which allows experts to analyze deep generative models -- the most popular version being the generative adversarial network (GAN) -- at different granularities \cite{Liu2018}. 
-DGMTracker offers the following three modules. Snapshot-, layer- and neuron-level analysis.
-To achieve this, DGMTracker is divided into two modules. Data flow visualization and Training dynamics analysis.
-Data flow visualization focuses on the general flow of input data towards the output layer. Experts can analyze hotspots and bottlenecks using this flow data. DGMTracker offers snapshot- and neuron-level analysis of data flow data.
-Training dynamics are a collection of multiple parameters of interest to the expert. These include loss and average weight per layer. Those data are visualized in the Training dynamics analysis module of DGMTracker.
-Using these modules the expert can then perform analysis on different levels of detail in different modalities.
-An overview if DGMTracker's architecture can be seen in Figure \ref{fig:mengchen1}.
-
-\begin{figure}[!htb]
-  \centering
-  \includegraphics[width=2.75in]{mengchen1}
-  \caption{Overview of DGMTracker's architecture \protect\cite{Liu2018}}
-  \label{fig:mengchen1}
-\end{figure}
-
-\subsubsection{Snapshot-Level Analysis}
-Network states can be captured at different points in time during training resulting in a time series of snapshot data.
-This data is usually visualized either by using dimensionality reduction methods such as t-SNE or by employing multiple line charts. 
-Liu et al. relied on the latter approach, showing temporal changes in parameters such as loss or average weight in a layer (see Figure \ref{fig:mengchen2})
-
-\begin{figure}[!htb]
-  \centering
-  \includegraphics[width=2.75in]{mengchen2}
-  \caption{Snapshot-level analysis -- each layer is portrayed as a separate area and metrics are shown within its boundaries \protect\cite{Liu2018}}
-  \label{fig:mengchen2}
-\end{figure}
-
-These data cumulatively represent the overall training dynamics of a network.
-
-\subsubsection{Neuron-level Analysis}
-On this level, the expert can see how each neuron of one layer contributes to the input of the following layer. The contribution is assessed by using a credit assignment formula which maps each node's influence to a scale of minus one to one (where negative values mean backward contribution and positive ones denote forward contribution).
-These values are mapped to visual representations of the nodes through a color map. Connections between nodes follow the same scheme. Their thickness additionally shows the magnitude of contribution to individual connections. Since there are usually too many nodes in each layer to visualize them all separately, Liu et al. have used K-Means clustering to reduce visual clutter. Neurons are then placed on a feature map to further reduce complexity (see Figure \ref{fig:mengchen3}).
-
-\begin{figure}[!htb]
-  \centering
-  \includegraphics[width=2.75in]{mengchen3}
-  \caption{Neuron-level analysis -- single node contributions are clustered using K-Means and are then mapped to feature maps to enhance legibility \protect\cite{Liu2018}}
-  \label{fig:mengchen3}
-\end{figure}
-
-\subsubsection{Training Dynamics Visualization}
-This second module of DGMTracker was designed to enable experts to analyze training processes on a temporal level.
-Snapshot data is visualized using different line charts showing metrics such as loss and layer activation over time. Again, visualizing all the data directly will usually lead to visual clutter. In this case, Liu et al. propose blue-noise sampling to extract a representative overview of the raw data (see Figure \ref{fig:mengchen4}). The advantage of blue-noise sampling over the conventional random sampling of snapshot data is that the former preserves outliers. This is especially important if the expert is to find layers and neurons that may cause training failure.
-
-\begin{figure}[!htb]
-  \centering
-  \includegraphics[width=2.75in]{mengchen4}
-  \caption{Training Dynamics -- relevant data is picked from the raw data (left) using blue-noise sampling to preserve outliers (right) as compared to random sampling (middle) \protect\cite{Liu2018}}
-  \label{fig:mengchen4}
-\end{figure}
-
-\subsection{GANViz: A Visual Analytical Approach to Understand the Adversarial Game}
-Wang et al.'s paper describes a novel approach to visualize Generative Adversarial Networks (GANs) \protect\cite{Wang}. GANs, in contrast to the more commonly used CNNs, is used for image data generation, rather than discrimination. As such, they are used for generating images for DNN training in areas where the datasets used are not sufficient. Further, last year NVIDIA presented a GAN that is able to generate realistic fake portrait photos that are difficult to discriminate against real ones \protect\cite{KarrasNVIDIA}. 
-GANs differ from the usual CNN architecture, as they are trained by two adversarial networks. One of those networks called the Generator (G) generates fake data that is being handed to the Discriminator (D), who tries to identify the fake. During the training-process, G is constantly developing its ability to produce sufficient good images so as to fool D, whereas D is getting better at discerning images handed by G from the real ones mixed in the dataset.\\
-
-In order to improve working with GANs, Wang et al. have consulted with experts on what their solution, GANViz is required to incorporate. To aid those experts, the main focus areas of GANViz are as follows.
-
-\begin{itemize}
-  \item The support for model evaluation while training
-  \item Visualization of model interpretation
-  \item Comparative visualization with a focus on the difference between false-positive and true-positive images (e.g. images of apples vs. oranges)
-  \item Comparative visualization with a focus on tracking training data during the training process
-\end{itemize}
-
-\subsubsection{Approach}
-To achieve the goals described, we will give an overview of how GANViz works. GANViz is used to visualize deep convolutional GANs (DCGANs), which feature, as an extension of GANs, a deep deconvolutional network as G, and a deep convolutional binary classifier as D. For visualization, a multitude of parameters are being measured during training. The most important parameters for examining the training progress are as follows.
-
-\begin{itemize}
-  \item The loss function of G and D, which indicates the quality of a model as it measures the prediction error of a model;
-  \item The probability values of D's discrimination with regards to the prediction of real vs. fake images;
-  \item The activations from all layers for each image when being passed through D;
-  \item The area under the curve (AUC) which plots the true-positive rate against the false-positive rate;
-\end{itemize}
-
-\begin{figure*}
-  \centering
-  \includegraphics[width=\textwidth]{ganviz}
-  \caption{\protect\cite{Wang}}
-  \label{fig:ganviz}
-\end{figure*}
-
-As seen in Figure \ref{fig:ganviz}a and b, most of those parameters are plotted as charts. The distribution-view in Figure \ref{fig:ganviz}c is used for representing the performance of G, by showing the feature probability distribution of real vs. fake images. Here, after applying dimensionality reduction, generated and real images are plotted in a 2D graph, indicating what images tricked D by encoding the prediction probability with a color gradient. A lasso tool is implemented to give users the ability to examine specific images in detail. The TensorPath view seen in Figure \ref{fig:ganviz}d provides an overview of D's network architecture, where the activation of certain layers can be viewed individually. Further, as seen in Figure \ref{fig:ganviz}e, those activations can be compared between layers and over multiple timestamps. This activation comparison view is linked with the TensorPath view, allowing for the user to actively compare the activations of multiple images.
-
-GANViz was evaluated in a case study and by assessing experts' feedback.
 
 \section{Comparison}
 In this chapter, we are comparing the papers presented in the previous section. 
