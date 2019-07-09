@@ -260,7 +260,7 @@ To demonstrate what specific regions or features of an image are of greater or s
 \end{itemize}
 
 Sensitivity heatmaps utilize sensitivity analysis. This means that the local sensitivity is used to demonstrate what, for example, makes a bird more or less likely to be interpreted as a bird. Therefore this method shows how small changes in a single pixel value influence the output of a network as a whole. Large values indicate that a pixel has a severe effect on the classification function. Since this approach focusses on local features, global features are underrepresented, leading to the drawback that the generated heatmap does not fully explain a classification of an image.\\\\
-Deconvolution heatmaps are based on the concept of mapping activations of a network's output to pixel space via backpropagation. This method will, at first glance, give reasonable explanations of a decision, since the heatmap shows a matching input pattern for a classification object, meaning that the contours of a bird will be highlighted. The downside is, that, according to Samek et al, there is no direct correspondence between the generated scores and the contribution of an individual pixel to the overall decision.\\\\
+Deconvolution heatmaps are based on the concept of mapping activations of a network's output to pixel space via backpropagation. This method will, at first glance, give reasonable explanations of a decision, since the heatmap shows a matching input pattern for a classification object, meaning that the contours of a bird will be highlighted. The downside is, that, according to Samek et al., there is no direct correspondence between the generated scores and the contribution of an individual pixel to the overall decision.\\\\
 Relevance heatmaps appear to be the most promising approach. They use Layer-wise Relevance Propagation (LRP) to deconstruct a decision into the relevances on a pixel level, therefore showing the contribution of an individual pixel to the end-result. This technique, compared to sensitivity heatmaps, is far more favorable towards global features and shows both, local and global impact in its heatmap. The most apparent benefit of LRP heatmaps is, that they not only visualize the positive evidence for a certain classification, but also show what pixel data had a negative impact on the decision. In the example shown below (Figure \ref{fig:heatmap_numbers}) we can see that LRP, compared to deconvolution, highlights positive evidence as red, but also negative evidence, that, for example, speaks against the decision that the given image represents a 9.
 
 \begin{figure*}
@@ -425,7 +425,7 @@ To summarize, Liu et al.'s application is a good way to visualize deep neural ne
 \subsection{Towards Better Analysis of Deep Convolutional Neural Networks}
 
 \subsection{Analyzing the Training Processes of Deep Generative Models}
-In their paper, Liu et al developed the tool DGMTracker, which allows experts to analyze deep generative models -- the most popular version being the generative adversarial network (GAN) -- at different granularities \cite{Liu2018}. 
+In their paper, Liu et al. developed the tool DGMTracker, which allows experts to analyze deep generative models -- the most popular version being the generative adversarial network (GAN) -- at different granularities \cite{Liu2018}. 
 DGMTracker offers the following three modules. Snapshot-, layer- and neuron-level analysis.
 To achieve this, DGMTracker is divided into two modules. Data flow visualization and Training dynamics analysis.
 Data flow visualization focuses on the general flow of input data towards the output layer. Experts can analyze hotspots and bottlenecks using this flow data. DGMTracker offers snapshot- and neuron-level analysis of data flow data.
@@ -443,7 +443,7 @@ An overview if DGMTracker's architecture can be seen in Figure \ref{fig:mengchen
 \subsubsection{Snapshot-Level Analysis}
 Network states can be captured at different points in time during training resulting in a time series of snapshot data.
 This data is usually visualized either by using dimensionality reduction methods such as t-SNE or by employing multiple line charts. 
-Liu et al relied on the latter approach, showing temporal changes in parameters such as loss or average weight in a layer (see Figure \ref{fig:mengchen2})
+Liu et al. relied on the latter approach, showing temporal changes in parameters such as loss or average weight in a layer (see Figure \ref{fig:mengchen2})
 
 \begin{figure}[!htb]
   \centering
@@ -456,7 +456,7 @@ These data cumulatively represent the overall training dynamics of a network.
 
 \subsubsection{Neuron-level Analysis}
 On this level, the expert can see how each neuron of one layer contributes to the input of the following layer. The contribution is assessed by using a credit assignment formula which maps each node's influence to a scale of minus one to one (where negative values mean backward contribution and positive ones denote forward contribution).
-These values are mapped to visual representations of the nodes through a color map. Connections between nodes follow the same scheme. Their thickness additionally shows the magnitude of contribution to individual connections. Since there are usually too many nodes in each layer to visualize them all separately, Liu et al have used K-Means clustering to reduce visual clutter. Neurons are then placed on a feature map to further reduce complexity (see Figure \ref{fig:mengchen3}).
+These values are mapped to visual representations of the nodes through a color map. Connections between nodes follow the same scheme. Their thickness additionally shows the magnitude of contribution to individual connections. Since there are usually too many nodes in each layer to visualize them all separately, Liu et al. have used K-Means clustering to reduce visual clutter. Neurons are then placed on a feature map to further reduce complexity (see Figure \ref{fig:mengchen3}).
 
 \begin{figure}[!htb]
   \centering
@@ -467,7 +467,7 @@ These values are mapped to visual representations of the nodes through a color m
 
 \subsubsection{Training Dynamics Visualization}
 This second module of DGMTracker was designed to enable experts to analyze training processes on a temporal level.
-Snapshot data is visualized using different line charts showing metrics such as loss and layer activation over time. Again, visualizing all the data directly will usually lead to visual clutter. In this case, Liu et al propose blue-noise sampling to extract a representative overview of the raw data (see Figure \ref{fig:mengchen4}). The advantage of blue-noise sampling over the conventional random sampling of snapshot data is that the former preserves outliers. This is especially important if the expert is to find layers and neurons that may cause training failure.
+Snapshot data is visualized using different line charts showing metrics such as loss and layer activation over time. Again, visualizing all the data directly will usually lead to visual clutter. In this case, Liu et al. propose blue-noise sampling to extract a representative overview of the raw data (see Figure \ref{fig:mengchen4}). The advantage of blue-noise sampling over the conventional random sampling of snapshot data is that the former preserves outliers. This is especially important if the expert is to find layers and neurons that may cause training failure.
 
 \begin{figure}[!htb]
   \centering
@@ -482,11 +482,11 @@ GANs differ from the usual CNN architecture, as they are trained by two adverser
 
 \section{New Papers -- Comparison}
 In this chapter, we are comparing the papers presented in the previous section. 
-The categories are loosely based on the work of Hohman et al who did a comprehensive survey of the state-of-the-art of visual analytics in deep learning \cite{Hohman2018}.
+The categories are loosely based on the work of Hohman et al. who did a comprehensive survey of the state-of-the-art of visual analytics in deep learning \cite{Hohman2018}.
 In their paper, they treat the WHY, WHAT, WHEN, WHO, HOW and WHERE of visual analytics in this area.
 We will focus on the WHAT, HOW and WHEN in this chapter. This means that the papers of this work will be compared and categorized based on what specific data domain of deep learning they are visualizing and what means have been used to visualize that data. Additionally, it is important to understand if this is done during or after training (WHEN).
 
-Hohman et al propose several categories of which we will use the following for our purpose.
+Hohman et al. propose several categories of which we will use the following for our purpose.
 
 \subsection{What Data Is Visualized?}
 Papers in this report can be categorized as follows based on what kind of data they visualize.
